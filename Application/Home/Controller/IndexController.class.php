@@ -3,6 +3,8 @@
 namespace Home\Controller;
 class IndexController extends BaseController {
     public function index(){
+    	$user = D('Common/User');
+    	var_dump($user->lists());exit;
     	$this->display();
     }
 }
