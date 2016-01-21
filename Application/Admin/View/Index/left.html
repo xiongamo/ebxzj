@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/Css/general.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/Css/left.css" />
+<script type="text/javascript" src="__PUBLIC__/admin/Js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/Js/base.js"></script>
+<base target="main-frame"/>
+</head>
+<body>
+<div id="m">
+<div id="main-div">
+<div id="menu-list">
+<ul>
+<if condition="$menu neq false">
+<foreach name="menu" key="name" item="list">
+<li class="{$list.class}" name="menu">
+	<span class="menu">{$name}</span>
+	<if condition="$list['list'] neq false">
+	<foreach name="list.list" item="v">
+		<ul <if condition="$list.class eq 'collapse'">style="display:none"</if>>
+			<li class="menu-item"><a href="__APP__{$v.o}">{$v.1}</a></li>
+		</ul>
+	</foreach>
+	</if>
+</li>
+</foreach>
+</if>
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+$(function(){
+	$('.menu-item a').click(function(){
+		$('.menu-item a').css({ color:'','font-weight':''});
+		$(this).css({ color:'#EB8A3D','font-weight':'bold'});
+	});
+});
+//-->
+</script>
+</body>
+</html>
