@@ -17,7 +17,7 @@
 <?php if($menu != false): if(is_array($menu)): foreach($menu as $name=>$list): ?><li class="<?php echo ($list["class"]); ?>" name="menu">
 	<span class="menu"><?php echo ($name); ?></span>
 	<?php if($list['list'] != false): if(is_array($list["list"])): foreach($list["list"] as $key=>$v): ?><ul <?php if($list["class"] == 'collapse'): ?>style="display:none"<?php endif; ?>>
-			<li class="menu-item"><a href="/ebxzj/index.php<?php echo ($v["o"]); ?>"><?php echo ($v["1"]); ?></a></li>
+			<li class="menu-item"><a href="/ebxzj/index.php/Admin<?php echo ($v["0"]); ?>"><?php echo ($v["1"]); ?></a></li>
 		</ul><?php endforeach; endif; endif; ?>
 </li><?php endforeach; endif; endif; ?>
 </ul>

@@ -3,10 +3,10 @@ defined('THINK_PATH') or exit();
 return array(
 		'menu' => array(
 				'客户管理'=>array(
-						'code'=>'borrow_manage',
+						'code'=>'user_manage',
 						'class'=>'explode',
 						'list'    =>array(
-								array('/Borrow','所有客户')
+								array('/User','所有客户')
 						)
 				),
 				'文章管理'=>array(

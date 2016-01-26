@@ -21,7 +21,7 @@
 	<if condition="$list['list'] neq false">
 	<foreach name="list.list" item="v">
 		<ul <if condition="$list.class eq 'collapse'">style="display:none"</if>>
-			<li class="menu-item"><a href="__APP__{$v.o}">{$v.1}</a></li>
+			<li class="menu-item"><a href="__MODULE__{$v.0}">{$v.1}</a></li>
 		</ul>
 	</foreach>
 	</if>
