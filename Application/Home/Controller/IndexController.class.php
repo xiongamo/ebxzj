@@ -3,6 +3,7 @@
 namespace Home\Controller;
 class IndexController extends BaseController {
     public function index(){
+    	echo "23";exit;
     	$user = D('Common/User');
     	$this->display();
     }
