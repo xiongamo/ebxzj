@@ -13,6 +13,6 @@ return array(
 		'TMPL_R_DELIM'=>'}',
 		
 		'LOAD_EXT_CONFIG' => array(
-			'menu',
+			'article',
 		),
 );
