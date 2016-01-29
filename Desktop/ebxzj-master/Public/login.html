@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>登陆</title> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+    .code
+    {
+      font-family: Arial;
+      font-style: italic;
+      color: Red;
+      border: 0;
+      padding: 2px 3px;
+      letter-spacing: 3px;
+      font-weight: bolder;
+    }
+    .unchanged
+    {
+      border: 0;
+    }
+ </style>
+ 
+<script language="javascript" type="text/javascript">
+ 
+  var code; //在全局 定义验证码
+  var code2; //在全局 定义验证码
+  function createCode() {
+    code = "";
+    var checkCode = document.getElementById("checkCode");
+    function RndNum(n) {
+      var rnd = "";
+      for (var i = 0; i < n; i++)
+        rnd += Math.floor(Math.random() * 10);
+      return rnd;
+    }
+ 
+    var num = RndNum(2);
+    var num2 = RndNum(2);
+ 
+    code = num + "+" + num2 + "=";
+    code2 = parseInt(num) + parseInt(num2)
+ 
+    if (checkCode) {
+      checkCode.className = "code";
+      checkCode.value = code;
+    }
+ 
+  }
+</script>
+<script type="text/javascript" src="flat_ui/js/vendor/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="flat_ui/js/login.js"></script>
+<script type="text/javascript">
+        $(function () {
+            $("#getCode").click(function () {
+                //执行获取验证码的操作
+                GetNumber();
+            });
+        })
+
+        var count = 5;
+        function GetNumber() {
+            $("#getCode").attr("disabled", "disabled");
+            $("#getCode").val(count + "秒之后点击获取")
+            count--;
+            if (count > 0) {
+                setTimeout(GetNumber, 1000);
+            }
+            else {
+                $("#getCode").val("点击获取验证码");
+                $("#getCode").attr("disabled", "");
+            }
+        }
+ </script>
+<SCRIPT language=javascript>
+<!--
+function checkspace(checkstr) {
+  var str = '';
+  for(i = 0; i < checkstr.length; i++) {
+    str = str + ' ';
+  }
+  return (str == checkstr);
+}
+function check()
+{
+  if(checkspace(document.loginform.username.value)) {
+	document.loginform.username.focus();
+    alert("手机号不能为空！");
+	return false;
+  }
+  if(checkspace(document.loginform.password.value)) {
+	document.loginform.password.focus();
+    alert("密码不能为空！");
+	return false;
+  }
+    if(checkspace(document.loginform.yzm.value)) {
+	document.loginform.yzm.focus();
+    alert("验证码不能为空！");
+	return false;
+  }
+   var inputCode = document.getElementById("yzm3").value;
+    if (inputCode != code2) {
+        alert("验证码输入错误！");
+		return false;
+        createCode(); //刷新验证码
+      }
+      else {
+        alert("^-^ OK");
+      }
+  
+	document.loginform.submit();
+  }
+//-->
+</SCRIPT>
+<link href="flat_ui/css/login2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="top">
+		<div class="logo" style="width:150px;height:100px;border:2px solid #000000;margin-left:100px;">
+			logo
+		</div>
+		<div class="right" style="width:80px;height:40px;background:#CCFF33;float:right;margin-right:50px;margin-top:-70px;line-height:40px;">
+			<a href="index.html"  style="text-decoration:none;margin-left:10px;">返回首页</a>
+		</div>
+</div>
+
+
+<div class="login" style="margin-top:50px;">
+    
+    <div class="header">
+        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">快速登录</a>
+			<a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">快速注册</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
+        </div>
+    </div>    
+  
+    
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 295px;">    
+
+            <!--登录-->
+            <div class="web_login" id="web_login">
+               
+               
+               <div class="login-box">
+    
+            
+			<div class="login_form">
+				<form action="index.html" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post" style="height:400px;"><input type="hidden" name="did" value="0"/>
+               <input type="hidden" name="to" value="log"/>
+                <div class="uinArea" id="uinArea" style="width:300px;">
+                <label class="input-tips" for="u" style="width:70px;">手机号：</label>
+                <div class="inputOuter" id="uArea">
+                    
+                    <input type="text" id="u" name="username" class="inputstyle"  />
+                </div>
+                </div>
+                <div class="pwdArea" id="pwdArea">
+               <label class="input-tips" for="p" style="width:70px;">密码：</label> 
+               <div class="inputOuter" id="pArea">
+                    
+                    <input type="password" id="p" name="password" class="inputstyle"/>
+					
+                </div>
+                </div>
+                <div class="yzmArea" id="yzmArea">
+                <label class="input-tips" for="p" style="width:70px;">验证码：</label> 
+               <div class="inputOuter" id="yArea">
+                    
+                   <INPUT id="yzm3" class="inputstyle" maxLength=5 size=8 type=password name="yzm" style="width:150px;" /> 
+				   <input type="text" onclick="createCode()" readonly="readonly" id="checkCode" class="unchanged" style="width: 80px;background: #660099"/><br />
+					
+                </div>
+                </div>
+                <div style="padding-left:50px;margin-top:20px;height:400px;"><input type="submit" value="登 录" style="width:150px;" class="button_blue" onclick="return check()"/></div>
+              </form>
+           </div>
+           
+            	</div>
+               
+            </div>
+            <!--登录end-->
+  </div>
+
+  <!--注册-->
+    <div class="qlogin" id="qlogin" style="display: none; ">
+   
+    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="../../index.html" method="post">
+	      <input type="hidden" name="to" value="reg"/>
+		      		       <input type="hidden" name="did" value="0"/>
+        <ul class="reg_form" id="reg-ul">
+        		<div id="userCue" class="cue">快速注册请注意格式</div>
+                <li>
+                	
+                    <label for="user"  class="input-tips2">手机号：</label>
+                    <div class="inputOuter2">
+                        <input type="text" id="user" name="user" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                <label for="passwd" class="input-tips2">密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd"  name="passwd" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                <li>
+                <label for="passwd2" class="input-tips2">确认密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2" />
+                    </div>
+                    
+                </li>
+                
+                <li>
+                 
+                    <div class="inputOuter2">
+                       
+                        <input type="text" id="yzm" name="yzm" maxlength="10" class="inputstyle2"/>
+                    </div>
+                      <button id="getCode" style="margin-left:9px;margin-top:10px;">获取验证码</button>
+                </li>
+                
+                <li>
+                    <div class="inputArea">
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="立即注册"/> 
+                    </div>
+                    
+                </li><div class="cl"></div>
+            </ul></form>
+           
+    
+    </div>
+   
+    
+    </div>
+    <!--注册end-->
+</div>
+<div class="banquan">Copyright  <A 
+href="/">&copy;</A>贵州e保险之家 黔ICP 备12345</div>
+</body></html>

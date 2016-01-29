@@ -1,0 +1,69 @@
+/* CSS Document */
+
+/* CSS Document */
+/*¹«ÓÃ*/
+.comWidth{width:1000px;margin-left:auto;margin-right:auto;}
+.leftArea{float:left;}
+.rightArea{float:right;}
+
+/*topbar*/
+.topbar{height:35px;background-color:#99FFFF;line-height:35px;}
+.topbar a:hover{color:red;}
+
+/*logo*/
+.logobar{height:85px;}
+.logo{padding-left:41px;padding-top:13px;float:left;}
+.navbar{margin-left:90px;}
+ a{color:#333;text-decoration:none}  
+    .nav{list-style: none;height: 31px; margin-top: -10px; padding-left:200px;border-bottom: 5px solid #f60;}  
+    .nav li{float: left;margin-top:-25px;}  
+    .nav li a{display: block; width:130px; text-align:center; background:#00CC66;height: 50px;line-height: 50px;margin-left: 1px}  
+    .nav li a.on,.nav li a:hover{background:#FF9900;color:#fff; }  
+
+/*container1*/
+.container1{height:530px;background-color:#f5f6f7;}
+.left{
+width:300px;
+height:450px;
+
+float:left;
+margin-left:-50px;
+}
+.right{
+width:780px;
+height:550px;
+
+float:right;
+margin-right:-40px;
+}
+
+
+.bottom{
+height:300px;
+width:250px;
+border:1px solid #999999;background:#fff5fa;
+margin:20px auto;
+margin-left:50px;
+}
+
+.main{
+width:780px;
+height:580px;
+border:2px solid #ffcc00;background:#fffff7;
+margin:20px auto;
+margin-left:40px;
+}
+
+.answer1,.answer2{
+width:720px;
+height:90px;
+border-bottom:1px solid grey;
+margin-left:-120px;
+word-wrap:break-word;}
+
+.resopnse{
+word-wrap:break-word;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+width:700px;}
