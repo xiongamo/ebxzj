@@ -15,4 +15,7 @@ return array(
 		'LOAD_EXT_CONFIG' => array(
 			'article',
 		),
+		
+		//图片等文件保存路径
+		'UPLOAD_DIR' => '../Uploads/'
 );

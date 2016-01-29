@@ -8,4 +8,8 @@ return array(
 		'LOAD_EXT_CONFIG' => array(
 				'menu',
 		),
+		
+		//图片等文件保存路径
+		'UPLOAD_DIR' => '../Uploads/',
+		'DOMAIN' => 'http://192.168.31.240',
 );

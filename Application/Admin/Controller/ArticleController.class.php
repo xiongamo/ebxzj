@@ -35,4 +35,14 @@ class ArticleController extends BaseController{
 	public function upload_img(){
 		
 	}
+	
+	/**
+	 * 增加文章页面显示
+	 * @author mochaokai
+	 */
+	public function add(){
+		$article_type = C('article');
+		$this->assign('article_type', $article_type['knowledge']['name']);
+		$this->display();
+	}
 }
