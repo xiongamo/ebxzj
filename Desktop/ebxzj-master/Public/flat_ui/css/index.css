@@ -8,19 +8,11 @@
 .leftArea{float:left;}
 .rightArea{float:right;}
 
-/*topbar*/
-.topbar{height:35px;background-color:#99FFFF;line-height:35px;}
-.topbar a:hover{color:red;}
 
-/*logo*/
-.logobar{height:85px;}
-.logo{padding-left:41px;padding-top:13px;float:left;}
-.navbar{margin-left:90px;}
- a{color:#333;text-decoration:none}  
-    .nav{list-style: none;height: 31px; margin-top: -10px; padding-left:200px;border-bottom: 5px solid #f60;}  
-    .nav li{float: left;margin-top:-25px;}  
-    .nav li a{display: block; width:130px; text-align:center; background:#00CC66;height: 50px;line-height: 50px;margin-left: 1px}  
-    .nav li a.on,.nav li a:hover{background:#FF9900;color:#fff; }  
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{color:#fff;background-color:transparent;}
+
+ 
 
 /*container1*/
 .container1{height:550px;background-color:#f5f6f7;}
@@ -29,12 +21,12 @@
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;/*<!--这三行设置文字不换行，超过部分用...代替-->*/
-width:1000px;
+width:1150px;
 font:Microsoft YaHei UI Light;
-height:300px;
-border:3px solid #3399CC;background:#fff9ed;
-margin:20px auto;
-margin-left:50px;
+height:350px;
+
+margin-top:-5px;
+margin-left:-70px;
 overflow: hidden; 
 position: relative;}
 
@@ -48,23 +40,27 @@ margin-left:50px;
 .left{
 width:200px;
 height:250px;
-border:1px solid #0099FF;background:#FFFFFF;
+border:1px solid #3399CC;background:#FFFFFF;
+border-radius:10px;
+box-shadow:5px 5px 5px #aaaaaa;
 float:left;
-margin-left:0px;
+margin-left:-110px;
 }
 .right{
-width:760px;
+width:880px;
 height:250px;
 
 float:right;
-margin-right:0px;
+margin-right:-10px;
 }
 .main{
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;/*<!--这三行设置文字不换行，超过部分用...代替-->*/
 height:300px;
-border:1px solid #0099FF;background:#fffff7;
+border:1px solid #3399CC;background:#fffff7;
+border-radius:10px;
+box-shadow:5px 5px 5px #aaaaaa;
 margin:0px auto;
 }
 
