@@ -1,0 +1,63 @@
+<include file="Index/head"/>
+<!-- menu start -->
+<h1>
+	<span id="search_id" class="action-span1">
+		列表
+	</span>
+</h1>
+<!-- menu end -->
+
+<!-- search start -->
+<div class="form-div">
+<form method="get">
+	用户名：<input type="text" name="username" value="" size="15" />
+	手机：<input type="text" name="mobile" value="" size="15" />
+	<input type="submit" value=" 搜索 " class="button" />
+</form>
+</div>
+<!-- search end -->
+
+<!-- list start -->
+<div class="list-div" id="listDiv">
+<table id="page-table" cellspacing="0">
+	<tr><td align="right" nowrap="true"><div id="turn-page">{$page}</div></td></tr>
+</table>
+<table cellpadding="3" cellspacing="1">
+	<tr>
+		<th>编号</th>
+		<th>用户名</th>
+		<th>手机号</th>
+		<th>注册时间</th>
+		<th>账号状态</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="user_list" item="value">
+	<tr>
+		<td>{$value.id}</td>
+		<td>{$value.name}</td>
+		<td>{$value.tel}</td>
+		<td><?php echo date('Y-m-d H:i:s', $value['reg_time']); ?></td>
+		<?php if($value['islock']):?>
+		<td>禁用</td>
+		<?php else:?>
+		<td>正常</td>
+		<?php endif;?>
+		<?php if(!$value['islock']):?>
+		<td><a onclick="manage(this)" href="javascript:;" url="__CONTROLLER__/set?state={$value.islock}&id={$value.id}">禁用此账号</a></td>
+		<?php else:?>
+		<td><a onclick="manage(this)" href="javascript:;" url="__CONTROLLER__/set?state={$value.islock}&id={$value.id}">解禁此账号</a></td>
+		<?php endif;?>
+	</tr>
+	</foreach>
+</table>
+</div>
+<!-- list end -->
+<script>
+function manage(obj){
+	if(!confirm('确认操作？')){
+		return false;
+	}
+	window.location.href=$(obj).attr('url');
+}
+</script>
+<include file="Index/footer"/>

@@ -1,0 +1,47 @@
+<include file="Index/head"/>
+<!-- menu start -->
+<h1>
+	<span id="search_id" class="action-span1">
+		列表
+	</span>
+	<span class="action-span"><a href="__URL__/add">添加</a></span>
+</h1>
+<!-- menu end -->
+
+<!-- list start -->
+<div class="list-div" id="listDiv">
+<table id="page-table" cellspacing="0">
+	<tr><td align="right" nowrap="true"><div id="turn-page">{$page}</div></td></tr>
+</table>
+<table cellpadding="3" cellspacing="1">
+	<tr>
+		<th>编号</th>
+		<th>标题</th>
+		<th>短标题</th>
+		<th>创建时间</th>
+		<th>是否显示</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="list" item="value">
+	<tr>
+		<td>{$value.id}</td>
+		<td>{$value.title}</td>
+		<td>{$value.short_title}</td>
+		<td>{$value.create_time}</td>
+		<?php if($value['is_show']):?>
+		<td>禁用</td>
+		<?php else:?>
+		<td>正常</td>
+		<?php endif;?>
+		<?php if(!$value['is_show']):?>
+		<td><a onclick="manage(this)" href="javascript:;" url="__CONTROLLER__/set?state={$value.islock}&id={$value.id}">禁用此账号</a></td>
+		<?php else:?>
+		<td><a onclick="manage(this)" href="javascript:;" url="__CONTROLLER__/set?state={$value.islock}&id={$value.id}">解禁此账号</a></td>
+		<?php endif;?>
+	</tr>
+	</foreach>
+</table>
+</div>
+<!-- list end -->
+
+<include file="Index/foot"/>

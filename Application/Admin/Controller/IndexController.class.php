@@ -1,9 +1,86 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
-namespace Home\Controller;
+namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
-    public function index(){
-	$this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p></div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
-    }
+// 	public function __construct(){
+// 		parent::__construct();
+// 	}
+#index
+	public function index(){
+		if(!$_SESSION['user']){
+			header('location:'.U('admin/Index/login'));
+			return ;
+		}
+		$this->display();
+	}
+	
+	
+	#top
+	public function top(){
+		
+		$this->display();
+	}
+
+	
+	#left
+	public function left(){
+		$this->assign('menu',D('Common/Admin')->getMenus());
+		$this->display();
+	}
+	
+	
+	#right
+	public function right(){
+		$this->display();
+	}
+
+	
+	#login
+	public function login(){
+
+		#是否显示验证码
+
+		$msg = '';
+		if (IS_POST){
+
+			$name = I('name');
+			$password = I('password');
+			if(!empty($name) && !empty($password))
+			{
+				#验证用户信息
+				$user_info = D('Common/Admin')->loginCheck($name,$password);
+				#记录登录日志
+				$log_data = array(
+					'admin_id' => isset($user_info['id']) ? $user_info['id'] :0,
+					'login_time' => date('Y-m-d H:i:s'),
+					'login_ip' => get_client_ip(),
+				);
+				$log_result = D('Common/Adminlog')->log_add($log_data);
+
+				#跳转
+				if(isset($user_info['id']))
+				{
+					session('user',$user_info['id']);
+					redirect(U('admin/Index/index'));
+				}
+				else
+				{
+					$this->error('登录失败，用户名或密码错误。');
+				}
+			}
+			else
+			{
+				$this->error('登录失败，用户名或密码错误。');
+			}
+		}
+		$this->display();
+	}
+
+	
+	#logout
+	public function out(){
+		session_destroy();
+		redirect(U('Index/login'));
+	}
 }

@@ -7,8 +7,11 @@ class UserModel extends BaseModel{
 	 * @param $field string
 	 * @author mochaokai
 	 */
-	public function user_lists($field){
-		return $this->field($field)->select();
+	public function user_lists($field = '',$limit = 0, $offset = 0, $where = array()){
+		if($limit){
+			return $this->field($field)->where($where)->limit($offset, $limit)->select();
+		}
+		return $this->field($field)->where($where)->select();
 	}
 	
 	/**
@@ -46,5 +49,25 @@ class UserModel extends BaseModel{
 		
 		return $this->where($where)->delete();
 		
+	}
+	
+	/**
+	 * 获取记录数
+	 * @param $where array
+	 * @return $data int
+	 * @author mochaokai
+	 */
+	public function user_count($where = array()){
+		return $this->where($where)->count();
+	}
+	
+	/**
+	 * 更新用户信息
+	 * @param $id int 用户id
+	 * @param $data array 更新的数据
+	 * @author mochaokai
+	 */
+	public function user_update($id, $data){
+		return $this->where(array('id' => $id))->save($data);
 	}
 }
