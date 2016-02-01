@@ -7,7 +7,9 @@
 
     <!-- Loading Bootstrap -->
   <link href="flat_ui/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<link  rel="stylesheet" href="flat_ui/css/flat-ui.min.css">
+	<link rel="stylesheet" href="common/main.css">
+	<link  rel="stylesheet" href="common/menu.css">
     <!-- Loading Flat UI -->
   <link href="flat_ui/css/flat-ui.css" rel="stylesheet">
   <link rel="stylesheet" href="flat_ui/css/reset.css">
@@ -23,62 +25,38 @@
 </head>
 
 <body>
- <div class="headerbar">
-    <div class="topbar">
-	   <div class="comWidth">
-	   		<div class="leftArea">
-			 	<p style="font:flat-ui-icons-regular">e保险之家</p>
-			</div>
-			<div class="rightArea">
-				欢迎来到e保险之家！<a href="login.html">[退出]</a>
-			</div>
-	   </div>
-	</div>
-	<div class="logobar">
-		<div class="comWidth">
-			<div class="logo">
-				<a href="index.html"><img src="#" alt="e保险之家"></a>
-			</div>
-			<div class="container">
-			<div class="navbar">
-				<div class="comWidth">
-					<nav class="navbar navbar-inverse" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-5">
-            <span class="sr-only"></span>
-          </button>
-          <a class="navbar-brand" href="#"></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-collapse-5">
-          <ul class="nav navbar-nav">
-            <li ><a href="index.html">首页<span class="navbar-unread">1</span></a></li>
-            <li ><a href="lipeizhiyin.html">理赔指引</a></li>
-            <li><a href="baoxianzhishi.html">保险知识</a></li>
-			<li><a href="wendashequ.html">问答社区</a></li>
-			<li class="active"><a href="aboutus.html">关于我们</a></li>
-           </ul>
-        </div><!-- /.navbar-collapse -->
-      </nav>
-	 </div>
-					
+ 
+	<div class="container" style="height:90px;">
+		<nav class="navbar navbar-inverse my-box-shadow" role="navigation" style="height:20px;z-index:5;">
+	  <div class="navbar-header" >
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+	      <span class="sr-only">Toggle navigation</span>
+	    </button>
+	    <a class="navbar-brand" href="#">e保险之家</a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+	    <ul class="nav navbar-nav">
+	    	<li class=" my-item"><a href="index.html">首页</a></li>
+	    	<li class="my-item"><a href="lipeizhiyin.html">理赔指引</a></li>
+	    	<li class="my-item"><a href="baoxianzhishi.html">保险知识</a></li>
+	    	<li class="active my-item"><a href="aboutus.html">关于我们</a></li>
+	    </ul>
+	    <p class="navbar-text navbar-right">欢迎您，&nbsp;&nbsp;<a href="usercenter_message.html">某某某</a>&nbsp;<a href="login.html">退出</a></p>
+	  </div><!-- /.navbar-collapse -->
+	</nav><!-- /navbar -->
+ </div>				
                
  
-			</div>
-		</div>
-	</div>
- </div>
  
-  
  
- <div class="container1">
+<div class="content-grids">
+ <img src="images/banner.jpg" style="z-index:0; position:absolute;width:1150px;height:530px;"/>  
+ <div class="container1" >
  	<div class="comWidth">
 	</div>
  </div>
- 
- <div class="bottombar" style="margin-top:100px;text-align:center;">
+</div>
+ <div class="bottombar" style="margin-top:50px;text-align:center;">
 	  <div class="comWidth">
 	     Copyright <A href="/">&copy;</A>贵州e保险之家 黔ICP 备12345
 	  </div>
