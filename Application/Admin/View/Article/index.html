@@ -29,9 +29,9 @@
 		<td>{$value.short_title}</td>
 		<td>{$value.create_time}</td>
 		<?php if($value['is_show']):?>
-		<td>禁用</td>
+		<td>否</td>
 		<?php else:?>
-		<td>正常</td>
+		<td>是</td>
 		<?php endif;?>
 		<?php if(!$value['is_show']):?>
 		<td><a onclick="manage(this)" href="javascript:;" url="__CONTROLLER__/set?state={$value.islock}&id={$value.id}">禁用此账号</a></td>
