@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta  charset="gbk18030" />
+  <title>首页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+  <link href="flat_ui/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link  rel="stylesheet" href="flat_ui/css/flat-ui.min.css">
+	<link rel="stylesheet" href="common/main.css">
+	<link  rel="stylesheet" href="common/menu.css">
+    <!-- Loading Flat UI -->
+  <link href="flat_ui/css/flat-ui.css" rel="stylesheet">
+  <link rel="stylesheet" href="flat_ui/css/reset.css">
+   <link rel="stylesheet" href="flat_ui/css/index.css">
+    <link rel="shortcut icon" href="flat-ui/img/favicon.ico">
+	
+   <style type="text/css">
+        
+        #list { width: 5750px; height: 350px; position: absolute; z-index: 1;}
+        #list img { float: left;width:1150px;height:350px;}
+        #buttons { position: absolute; height: 10px; width: 100px; z-index: 2; bottom: 20px; left: 480px;}
+        #buttons span { cursor: pointer; float: left; border: 1px solid #fff; width: 10px; height: 10px; border-radius: 50%; background: #333; margin-right: 5px;}
+        #buttons .on {  background:#FFFFFF;}
+        .arrow { cursor: pointer; display: none; line-height: 39px; text-align: center; font-size: 36px; font-weight: bold; width: 40px; height: 40px;  position: absolute; z-index: 2; top: 180px; background-color: RGBA(0,0,0,.3); color: #fff;}
+        .arrow:hover { background-color: RGBA(0,0,0,.7);}
+        .top:hover .arrow { display: block;}
+        #prev { left: 20px;}
+        #next { right: 20px;}
+    </style>
+    <script type="text/javascript" src="flat_ui/js/vendor/jquery.1.10.2.js"></script>
+   <script type="text/javascript">
+
+        $(function () {
+            var top = $('.top');
+            var list = $('#list');
+            var buttons = $('#buttons span');
+            var prev = $('#prev');
+            var next = $('#next');
+            var index = 1;
+            var len = 3;
+            var interval = 3000;
+            var timer;
+
+
+            function animate (offset) {
+                var left = parseInt(list.css('left')) + offset;
+                if (offset>0) {
+                    offset = '+=' + offset;
+                }
+                else {
+                    offset = '-=' + Math.abs(offset);
+                }
+                list.animate({'left': offset}, 300, function () {
+                    if(left > -200){
+                        list.css('left', -1150 * len);
+                    }
+                    if(left < (-1150 * len)) {
+                        list.css('left', -1150);
+
+                    }
+                });
+            }
+
+            function showButton() {
+                buttons.eq(index-1).addClass('on').siblings().removeClass('on');
+            }
+            function play() {
+                timer = setTimeout(function () {
+                    next.trigger('click');
+                    play();
+                }, interval);
+            }
+            function stop() {
+                clearTimeout(timer);
+            }
+
+            next.bind('click', function () {
+                if (list.is(':animated')) {
+                    return;
+                }
+                if (index == 3) {
+                    index = 1;
+                }
+                else {
+                    index += 1;
+                }
+                animate(-1150);
+                showButton();
+            });
+
+            prev.bind('click', function () {
+                if (list.is(':animated')) {
+                    return;
+                }
+                if (index == 1) {
+                    index = 3;
+                }
+                else {
+                    index -= 1;
+                }
+                animate(1150);
+                showButton();
+            });
+
+            buttons.each(function () {
+                 $(this).bind('click', function () {
+                     if (list.is(':animated') || $(this).attr('class')=='on') {
+                         return;
+                     }
+                     var myIndex = parseInt($(this).attr('index'));
+                     var offset = -1150 * (myIndex - index);
+
+                     animate(offset);
+                     index = myIndex;
+                     showButton();
+                 })
+            });
+
+            top.hover(stop, play);
+
+            play();
+
+        });
+    </script>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="flat-ui/js/vendor/html5shiv.js"></script>
+      <script src="flat-ui/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="background-color:#F5F5F5;">
+<div class="container" style="height:90px;">
+		<nav class="navbar navbar-inverse my-box-shadow" role="navigation" style="height:20px;z-index:5;">
+	  <div class="navbar-header" >
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+	      <span class="sr-only">Toggle navigation</span>
+	    </button>
+	    <a class="navbar-brand" href="#">e保险之家</a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+	    <ul class="nav navbar-nav">
+	    	<li class="active my-item"><a href="index_1.html">首页</a></li>
+	    	<li class="my-item"><a href="lipeizhiyin.html">理赔指引</a></li>
+	    	<li class="my-item"><a href="baoxianzhishi.html">保险知识</a></li>
+	    	<li class="my-item"><a href="aboutus.html">关于我们</a></li>
+	    </ul>
+	    <p class="navbar-text navbar-right">欢迎来到e金融之家！</p>
+	  </div><!-- /.navbar-collapse -->
+	</nav><!-- /navbar -->
+ </div>				
+ 
+  
+ 
+ <div class="container1">
+ 	<div class="comWidth">
+	  	<div class="top" style="font-size:16px;padding-left:15px;">
+			<div id="list" style="left:-1000px;" >
+				<img src="images/location_3.jpg" alt="1" />
+				<img src="images/location_1.jpg" alt="1"/>
+				<img src="images/location_2.jpg" alt="2"/>
+				<img src="images/location_3.jpg" alt="3"/>
+				<img src="images/location_1.jpg" alt="3"/>
+			</div>
+			<div id="buttons">
+				<span index="1" class="on"></span>
+				<span index="2"></span>
+				<span index="3"></span>
+			
+   			</div>
+			<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+			<a href="javascript:;" id="next" class="arrow">&gt;</a>
+		</div><!--顶部结束-->
+		<div class="bottom">
+			  <div class="left">
+				   <div  style="text-align:center;">
+					 <h6 style="margin-top:0px;border-radius:10px;background:#00CCCC;height:40px;line-height:40px;">联系方式</h6>
+				   </div>
+				   <div style="padding-left:50px;font-size:14px;">
+					   <li>地址：xxx</li>
+					   &nbsp;
+					   <li>联系电话：xxx</li>
+					   &nbsp;
+					   <li>分享：xxx</li>
+					   &nbsp;
+				   </div>
+			  </div><!--底部左边结束-->
+	  
+			  <div class="right">
+				<div class="main" style="font-size:16px;padding-left:15px;">
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+					<li style="border-bottom:1px solid #000;width:730px;padding-left:20px;"><a href="#">最新资讯</a></li>
+			
+					
+				</div>
+			  </div><!--*右边结束*-->
+		</div><!--底部结束-->
+	</div>
+ </div><!--container结束-->
+ 
+ 
+
+
+ 
+ <div class="bottombar" style="margin-top:150px;text-align:center;">
+	  <div class="comWidth">
+	     Copyright<A href="/">&copy;</A>贵州e保险之家 黔ICP 备12345
+	  </div>
+</div>
+ 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="flat_ui/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="flat_ui/js/flat-ui.min.js"></script>
+	<script src="flat-ui/js/vendor/video.js"></script>
+  
+
+</body>
+</html>

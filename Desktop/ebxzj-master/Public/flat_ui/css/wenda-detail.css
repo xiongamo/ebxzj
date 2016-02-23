@@ -1,0 +1,70 @@
+/* CSS Document */
+
+/* CSS Document */
+/*¹«ÓÃ*/
+.comWidth{width:1000px;margin-left:auto;margin-right:auto;}
+.leftArea{float:left;}
+.rightArea{float:right;}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{color:#fff;background-color:transparent;} 
+
+/*content-grids*/
+.content-grids {
+margin-top:-11px;
+margin-left:100px;
+width:1200px;
+height:530px;
+
+}
+.container1{height:530px;background-color:#f5f6f7;}
+.left{
+width:300px;
+height:450px;
+
+float:left;
+margin-left:-100px;
+margin-top:12px;
+}
+.right{
+width:780px;
+height:550px;
+
+float:right;
+margin-right:10px;
+margin-top:12px;
+}
+
+
+.bottom{
+height:300px;
+width:250px;
+border:1px solid #999999;background:#fff5fa;
+box-shadow:5px 5px 5px #aaaaaa;
+border-radius:10px;
+margin:20px auto;
+margin-left:50px;
+}
+
+.main{
+width:780px;
+height:600px;
+border:2px solid #ffcc00;background:#fffff7;
+box-shadow:5px 5px 5px #aaaaaa;
+border-radius:10px;
+margin:20px auto;
+margin-left:40px;
+}
+.ask img{width:40px;height:40px;}
+.answer1,.answer2{
+width:720px;
+height:90px;
+border-bottom:1px solid grey;
+margin-left:-120px;
+word-wrap:break-word;}
+
+.resopnse{
+word-wrap:break-word;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+width:700px;}
