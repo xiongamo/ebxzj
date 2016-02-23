@@ -1,0 +1,151 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta charset="GBK" />
+<title>注册</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <link href="css/register.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport"
+          content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0,  maximum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- for apple -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<script type="text/javascript">
+		function checkspace(checkstr) {
+			  var str = '';
+			  for(i = 0; i < checkstr.length; i++) {
+				str = str + ' ';
+			  }
+			  return (str == checkstr);
+			}
+			function check()
+			{
+			  var a=document.touchForm.password.value;
+  			  var b=document.touchForm.password2.value;
+			  if(checkspace(document.touchForm.userName.value)) {
+				document.touchForm.userName.focus();
+				alert("用户名不能为空！");
+				return false;
+			  }
+			  if(document.touchForm.userName.value.length < 5 || document.touchForm.userName.value.length > 20 ){
+			  	document.touchForm.userName.focus();
+				alert("用户名格式不对！");
+				return false;
+			  }
+			  if(checkspace(document.touchForm.password.value)) {
+				document.touchForm.password.focus();
+				alert("密码不能为空！");
+				return false;
+			  }
+			  if(checkspace(document.touchForm.password2.value)) {
+				document.touchForm.password2.focus();
+				alert("确认密码不能为空！");
+				return false;
+			  }
+			  if(a!=b){
+			  	 alert("您两次输入的密码不一致!");
+				 return false;
+			  }
+			  if(checkspace(document.touchForm.mobile.value)) {
+				document.touchForm.mobile.focus();
+				alert("手机号不能为空！");
+				return false;
+			  }
+			  if(document.touchForm.mobile.value.length != 11){
+			  	document.touchForm.mobile.focus();
+				alert("手机号码格式不对！");
+				return false;
+			  }
+			  if(checkspace(document.touchForm.code.value)) {
+				document.touchForm.code.focus();
+				alert("验证码不能为空！");
+				return false;
+			  }
+			  
+				document.loginform.submit();
+			  }
+	</script>
+	<style type="text/css">
+			.black_overlay{display:none;position:absolute;top:0%;left:0%;width:100%;height:100%;background-color:black;z-index:1001;-moz-opacity:0.8;opacity:.80;filter:alpha(opacity=80);}
+			.box{display:none;position:absolute;top:25%;left:25%;width:50%;height:50%;padding:16px;border:3px solid orange;background-color:white;z-index:1002;overflow:auto;}
+	</style>
+</head>
+<body>
+<nav class="nav3 p">
+    <i class="btn2"><a href="login.html">返回</a></i>
+    <strong>e金融之家</strong>
+    <i class="btn3"><a href="login.html">登录</a></i></nav>
+<section class="form-group" id="inputObj">
+    <form id="touchForm" name="touchForm" action="login.html" method="post" onsubmit = "return checkUser();" >
+        <p class="flastHint" id="infoHint"></p>
+        <div class="form-text-login" id="userName_1">
+            <label>用户名：</label>
+            <input type="text" id="userName" name="userName" class="form-text" placeholder="5-20个字符，汉字、字母、数字" value="">
+            <a href="javascript:void(0);" class="form-text-clear" id="txtPhoneA"><i class="icon icon-clear" id="delA"></i></a>
+        </div>
+        <div class="form-text-login" id="pwd_1">
+            <label>密&nbsp;&nbsp;码：</label>
+            <input type="password" id="pwd" name="password" class="form-text" placeholder="6-25个字符，数字、字母、符号" value="">
+            <a href="javascript:void(0);" class="form-text-clear"><i class="r passbg" id="togglePassword"></i></a>
+        </div>
+		<div class="form-text-login" id="pwd_2">
+            <label style="margin-left:-10px;width:100px;">确认密码：</label>
+            <input type="password" id="pwd_2" name="password2" class="form-text" placeholder="再次输入密码" value="" style="margin-left:10px;">
+            <a href="javascript:void(0);" class="form-text-clear"><i class="r passbg" id="togglePassword"></i></a>
+        </div>
+        <div class="form-text-login" id="mobile_1">
+            <label>手机号：</label>
+            <input type="text" id="mobile" name="mobile" class="form-text" placeholder="11位大陆手机号" value="">
+            <a href="javascript:void(0);" class="form-text-clear" id="txtPhoneB"><i class="icon icon-clear" id="delB"></i></a>
+        </div>
+        <div class="form-text-login form-text-yzm" id="code_1">
+            <label>验证码：</label>
+            <input type="text" id="code" name="code" class="form-text" placeholder="" value="">
+            <div class="l wi2">
+                <input type="button" id="authCodeBt" name="authCodeBt" value="获取验证码" onClick="doGetSmsCode()"/>
+                <em id="isHideStyle" style="display:"></em>
+                <em></em>
+            </div>
+        </div>
+        <input type="hidden" name="referUrl" value="http%3A%2F%2Fm.xgo.com.cn%2F%3Ffrom%3Duc">
+        <div class="btn5" style="margin-top:12px">
+	   
+            <input type="hidden" name="nameBtn" value="nameBtn">
+            <input type="hidden" name="smsToken" id="smsToken" value="EZOFJA7SBZOFGERLEDLF4PMKEPIOKC7O5TYFAC7OBJYG">
+            <input type="submit" id="submitBtn" value="注&nbsp;&nbsp;册" onClick="return check()">
+          
+        </div>
+    </form>
+</section>
+<div class="userTip">
+    <div class="warmPrompt">
+    <strong>温馨提示：</strong>
+    <p>1、请确认您接收的短信是否被手机安全软件拦截 （如：360安全卫士、腾讯手机管家等）；</p>
+    <p>2、若长时间仍未激活，请联系客服<em><a href="tel:400-080-0688">400-080-0688</a></em></p>
+    </div>
+</div>
+<div class="footer">
+			<a href="javascript:void(0)" onClick="document.getElementById('light').style.display='block'; document.getElementById('fade').style.display='block'" style="margin-left:630px;font-size:16px" class="contact">联系我们</a>
+				<div  id="light" class="box" style="position: relative;display:none;">
+		         <a href="javascript:void(0)" onClick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">关闭</a>
+                  <p style="font-size:16px;text-align:center;line-height:30px;">
+					手机号：<a href="#">12345678</a>
+					（点击可拨打）
+					<br/>
+					<br/>
+					微信二维码：可通过长按保存/关注
+					<br/>
+					<br/>
+					<img src="../images/ewm.jpg" style="width:200px;height:200px;"></img>
+		          </p>
+		
+		        </div>
+				<div id="fade" class="black_overlay"></div>
+</div>
+</body>
+</script>
+</html>
