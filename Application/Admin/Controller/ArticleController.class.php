@@ -45,4 +45,12 @@ class ArticleController extends BaseController{
 		$this->assign('article_type', $article_type['knowledge']['name']);
 		$this->display();
 	}
+	
+	/**
+	 * 修改文章页面
+	 * @author mochaokai
+	 */
+	public function modify(){
+		
+	}
 }
