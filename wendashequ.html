@@ -1,0 +1,198 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="nojs ie6"><![endif]-->
+<!--[if IE 7]><html class="nojs ie7"><![endif]-->
+<!--[if IE 8]><html class="nojs ie8"><![endif]-->
+<!--[if gt IE 8]><!--> <html class=nojs> <!--<![endif]-->
+    <head>
+        <meta charset="gbk">
+        <title>问答社区</title>
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+		
+		<link rel="stylesheet" type="text/css" href="css/wendashequ.css" />
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<!-- jQuery (Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Custom Theme files -->
+		
+		<!-- Custom Theme files -->
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+			//顶部弹出菜单
+			$("#btnJdkey").click(function() {
+				if ($("#jdkey").css("display") == "none") {
+					$("#jdkey").show()
+				} else {
+					$("#jdkey").hide()
+				}
+			});
+			
+		});
+	    </script>
+		<style type="text/css">
+			.black_overlay{display:none;position:absolute;top:0%;left:0%;width:100%;height:100%;background-color:black;z-index:1001;-moz-opacity:0.8;opacity:.80;filter:alpha(opacity=80);}
+			.box{display:none;position:absolute;top:25%;left:25%;width:50%;height:50%;padding:16px;border:3px solid orange;background-color:white;z-index:1002;overflow:auto;}
+		</style>
+        <style>
+        * {margin:0;padding:0;}
+        body {min-width:320px;font: normal 100%/1.5 "Microsoft YaHei","Hei","WenQuanYi Micro Hei",SimHei,tohoma,sabs-serif;color:#333;background-color:#E6E6E6;}
+        .container {margin:0 auto 10px;width: 93.125%;max-width:480px;margin-top:-10px;}
+        .ie6 .container {width:480px;}
+        /* line */
+        .line-wrap {border: 1px solid #c5c5c5; -webkit-border-radius:5px;-o-border-radius:5px;-moz-border-radius:5px;border-radius:5px; background-color: #fff;}
+        .line,.line-first,.line-last,.line-agree {display: block;margin:2px 1em;line-height:40px;overflow:hidden;}
+        .line-wrap .line-first {border-bottom: 1px solid #c5c5c5;}
+        /* form */
+        .form {margin-top:10px;}
+        .form p input[type=submit], .form p input[type=text] {-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+        .form .line input,.form .line-first input,.form .line-last input {float:left;width:100%;height:48px;font-size: 18px;border:none;background:#fff;outline: none;}
+        .form .line label,.form .line-first label,.form .line-last label {float:left;margin-right:2.96992481203007%;letter-spacing:0;font-size:24px;color:#999;}
+        .form .line-agree {font-size: 11px; margin-left: 20px;}
+        .form .line-agree label {margin-left: 5px; line-height: 35px; vertical-align: top}
+        .form .line-agree a {text-decoration:none; color: #369ce8; line-height: 35px; vertical-align: top}
+        .js .form .line-first,.js .form .line-last {position: relative;}
+        .js .form .line-first input,.js .form .line-last input {width: 100%;}
+        .js .form .line-first label,.js .form .line-last label {position:absolute;top:10px;left:5%;}
+        .js .form .focus label {display:none;}
+        .form .form-do input {  font-size:18px;
+                                margin: 6px auto 30px auto;
+                                height: 50px;
+                                width: 100%;
+                                display: block;
+                                border-radius: 5px;
+                                border: none;
+                                color: white;
+                                background-color: #369ce8;
+                                -webkit-border-radius:5px;-o-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
+                                cursor: pointer;}
+        .form .form-do input:hover {background-color: #318ed3;}
+        .form .form-do input:disabled {background-color: grey}
+        .form .form-tip {overflow:hidden;font-size:14px;font-weight:normal;margin:10px 0; padding: 10px; background-color: #FFC;color: #F11; border-radius:5px; padding:10px;}
+        .form .form-tip span{float:left; width:88%;}
+        .form .form-tip .form-tip-pic {float:left; width: 20px; height: 20px; margin-right: 10px;
+            background-size: 20px 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGNQTFRF/3R0/62t/2pq/1xc/wQE/7e3/9zc/w4O/y0t/6Cg/x8f/xIS/0ZG/8PD/1BQ/+bm/wEB/3Nz/ygo/0pK/5OT/zMz/6Wl//f3/7m5/6ur//T0/05O/4CA/56e/////wAA////xNWZ4AAAACF0Uk5T//////////////////////////////////////////8An8HQIQAAAVVJREFUeNqc1teSwjAMBVCld9I7rPj/r4QNkw2OJW9kvYXJYTIuuoKnVmPRuXmT+X7W5G5XjPobcP4hqHtUqq8DM1qSFYlak4VHzg2ZujkMCiE63vrZ6niOIKTQ1H7/9RkhtpOOhlg3qoqHM3qk+B/C9KGiQTU0wnT4RlOMVxDG04HCFq8hbMM/BHgVIezIia6jyPmghTgHLMLbsqEEJQiTDa0ytP6iAGUIgzeqpah+wthLUT9CgVKEBXRy1IErRy7kcpRDI0cNZHKUgS9Hvh2y+jyrhbBacqvNtTpGVgeWvhpoMO+rQV9CE6q5626qgGsshlrZFmaohG2WlTeX5exVbLMk2nJ1/yzEveLaMhEA3r5PHhsAetTMO5r5qNFCrdxRyYeaFp8MUuPzHNT0552D+jQSkAuhjwTq8EEtOTV8qGOOtrnMmGM3UFmObnZD4sVx9CXAAAiJONy7/YsnAAAAAElFTkSuQmCC);}
+        /* h2 */
+        h2 {margin-top:50px;height:1em;line-height:1.5;font-size:0.8em;color:#9ca5ac;border-top:1px #CCC solid;}
+        h2 span {margin:0 auto;width:13em;display:block;margin-top:-10px;text-align:center;background-color:#E6E6E6;}
+        .ie6 h2 span {position:relative;}
+        /* alias */
+        .alias {margin-top:15px;}
+        .alias a {margin: 0 0 7px;border: 1px solid #c5c5c5; -webkit-border-radius:5px;-o-border-radius:5px;-moz-border-radius:5px;border-radius:5px;color:#6c717c;text-align: center;text-decoration:none;font-size:1em;background-color: #fff;}
+        .alias a:hover {background-color: #c5c5c5;}
+        .alias a img {margin-right: 10px;height: 20px;vertical-align:middle;border:none;}
+        .ie6 .alias a img {display:none;}
+        .alias .line,.alias .line-first,.alias .line-last {padding-top:0;padding-bottom:0;height:50px;line-height:50px;}
+        .ie7 .alias span {top:-50%;}
+        @media only screen and (-webkit-min-device-pixel-ratio : 2),
+        only screen and (min-device-pixel-ratio: 2) {
+
+        }
+        .error {margin-top:10px;height:40px;line-height:40px;text-align:center;color:#C43C3C;background-color:#F9EBEB;border:1px solid #EDC6C6;-webkit-border-radius:10px;-o-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
+        </style>
+		
+    </head>
+    <body onLoad="init()">
+		<div class="new-header">
+			<a href="http://m.yiche.com/" class="logo" onClick="javascript:dcsMultiTrack('DCS.dcsuri', '/car/onclick/tubiao.onclick','WT.ti', '图标')">e金融之家</a>
+			<a href="index.html" class="new-a-back"><span>返回</span></a>
+			<h2>e金融之家</h2>
+			<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+		</div>
+		<div class="new-jd-tab" style="display:none;position:relative;" id="jdkey">
+			<div class="new-tbl-type" >
+				<a href="index.html" class="new-tbl-cell" ><span class="icon" style="margin-left:-100px;">首页</span><p style="color:#6e6e6e;margin-left:-100px;margin-top:-40px;">首页</p></a>
+				<a href="lipeizhiyin.html" class="new-tbl-cell"><span class="icon2"  style="margin-left:-150px;">理赔指引</span><p style="color:#6e6e6e;margin-left:-150px;margin-top:-40px;">理赔指引</p></a>
+				<a href="baoxianzhishi.html" id="html5_cart" class="new-tbl-cell"><span class="icon3"  style="margin-left:-200px;">保险知识</span><p style="color:#6e6e6e;margin-left:-200px;margin-top:-40px;">保险知识</p></a>
+				<a href="wendashequ.html" class="new-tbl-cell"><span class="icon4 on"  style="margin-left:-230px;">问答社区</span><p style="color:#6e6e6e;margin-left:-230px;margin-top:-40px;" class="on">问答社区</p></a>
+				<a href="aboutus.html" class="new-tbl-cell"><span class="icon4 "  style="margin-left:-150px;">关于我们</span><p style="color:#6e6e6e;margin-left:-150px;margin-top:-40px;" >关于我们</p></a>
+			</div>
+		</div>
+		
+        <!--start-about-->
+	<div class="ab-section">
+	   <div class="container">
+		<div class="col-md-7 ab-left">
+		  <div style="width:1350px;height:50px;border:1px solid #FFFFFF;margin-left:-580px;text-align:center;margin-top:30px;border-radius:10px;background:#00CCCC;">
+			<h3 class="tittle">问答社区</h3>
+		  </div>
+		 <div class="user-center-information" style="text-align:center;font-size:16px;height:200px;">
+			<div class="grid_1" style="width:1000px;height:300px;">
+				<div class="container" style="margin-left:400px;" >
+					<div class="col-md-4">
+						<div class="news">
+							<div class="section-content" style="margin-top:-50px;">
+								<article>
+									
+									<a href="wendashequ_detail.html" style="margin-left:-200px;float:left;border-bottom:1px solid rgba(0, 0, 0, 0.1) ">办保险多少钱？</a>
+									<figure class="date"><i class="fa fa-file-o" style="float:right;"></i>07-25-2015</figure>
+								</article>
+								<article>
+									<a href="wendashequ_detail.html" style="margin-left:-200px;float:left;">办保险多少钱？</a>
+									<figure class="date"><i class="fa fa-file-o" style="float:right;"></i>07-25-2015</figure>
+								</article>
+								<article>
+									<a href="wendashequ_detail.html" style="margin-left:-200px;float:left;">办保险多少钱？</a>
+									<figure class="date"><i class="fa fa-file-o" style="float:right;"></i>07-25-2015</figure>
+								</article>
+								<article>
+									<a href="wendashequ_detail.html" style="margin-left:-200px;float:left;">办保险多少钱？</a>
+									<figure class="date"><i class="fa fa-file-o" style="float:right;"></i>07-25-2015</figure>
+								</article>
+								
+							</div><!-- /.section-content -->
+							<a href="#" class="read-more">查看更多</a>
+						</div><!-- /.news-small -->
+					</div>
+                   
+        <!--内容 End-->
+		</div>
+        
+    </div>
+		<div class="col-md-5 ab-img">
+		  <img src="images/ab-pic.jpg" alt=" " title="ab" />
+		</div>
+	      <div class="clearfix" ></div>
+	   </div>
+    </div>
+	</div>
+		<div class="footer">
+			<a href="javascript:void(0)" onClick="document.getElementById('light').style.display='block'; document.getElementById('fade').style.display='block'" style="margin-left:680px;font-size:16px" class="contact">联系我们</a>
+				<div  id="light" class="box" style="position: relative;display:none;">
+		         <a href="javascript:void(0)" onClick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">关闭</a>
+                  <p style="font-size:16px;text-align:center;line-height:30px;">
+					手机号：<a href="#">12345678</a>
+					（点击可拨打）
+					<br/>
+					<br/>
+					微信二维码：可通过长按保存/关注
+					<br/>
+					<br/>
+					<img src="../images/ewm.jpg" style="width:200px;height:200px;"></img>
+		          </p>
+		
+		        </div>
+				<div id="fade" class="black_overlay">123</div>
+		</div>
+    </body>
+    <script>
+        function init(){
+            var agree = document.getElementById('agree');
+            var btn_submit = document.getElementById('btn-submit');
+            var clicker =  function(e) {
+                if(!agree.checked) {
+                    btn_submit.disabled = true;
+                } else {
+                    btn_submit.disabled = false;
+                }
+            }
+            agree.addEventListener('click', clicker);
+            clicker();
+        }
+
+    </script>
+
+</html>
