@@ -8,4 +8,5 @@ class IndexController extends Controller {
 // 		$model = new \Common\Model\UserModel();
 		print_r($model->lists());
     }
+    
 }
