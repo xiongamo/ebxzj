@@ -42,6 +42,23 @@ class ArticleController extends BaseController{
 	 */
 	public function add(){
 		$article_type = C('article');
+		if(IS_POST){
+			$data['type_id'] = $article_type['knowledge']['id'];
+			$data['title'] = I('title');
+			$data['short_title'] = I('short_title');
+			$data['is_show'] = I('is_show');
+			$data['create_time'] = I('create_time');
+			$data['summary'] = I('summary');
+			$data['content'] = I('content');
+			$article = D('Common/Article');
+			if($article->article_add($data)){
+				$this->success('保存成功', __CONTROLLER__.'/index');
+				exit;
+			}else{
+				$this->error('保存失败', __CONTROLLER__.'/add');
+				exit;
+			}
+		}
 		$this->assign('article_type', $article_type['knowledge']['name']);
 		$this->display();
 	}
@@ -51,6 +68,19 @@ class ArticleController extends BaseController{
 	 * @author mochaokai
 	 */
 	public function modify(){
-		
+		$id = (int)I('id');
+		if(!$id){
+			$this->error('参数错误', __CONTROLLER__.'/index');
+			exit;
+		}
+		$article = D('Common/Article');
+		if(IS_POST){
+			
+		}
+		$article_info = $article->article_info($id);
+		$article_type = C('article');
+		$this->assign('article_type', $article_type['knowledge']['name']);
+		$this->assign('article_info', $article_info);
+		$this->display();
 	}
 }

@@ -1,7 +1,7 @@
 <include file="Index/head"/>
 <!-- menu start -->
 <h1>
-	<span class="action-span1">添加保险知识文章内容</span>
+	<span class="action-span1">修改保险知识文章内容</span>
 	<span class="action-span"><a href="__URL__">返回列表</a></span>
 </h1>
 <!-- menu end -->
@@ -10,6 +10,7 @@
 <div class="main-div">
 	<form method="post" id="form" action="__CONTROLLER__/add">
 		<table cellspacing="1" cellpadding="3" width="100%">
+		<input type="hidden" name="id" value="{$article_info.id}">
 			<tr>
 				<td class="label">所属分类：</td>
 				<td>
@@ -19,40 +20,40 @@
 			<tr>
 				<td class="label">标题：</td>
 				<td>
-					  <input type="text" name="title" class="required ruler" >
+					  <input type="text" name="title" class="required ruler" value="{$article_info.title}">
 					  <span class="require-field">*</span>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">副标题：</td>
 				<td>
-					 <input type="text" name="short_title" class="ruler">
+					 <input type="text" name="short_title" class="ruler" value="{$article_info.short_title}">
 				</td>
 			</tr>
 			<tr>
 				<td class="label">是否显示：</td>
 				<td>
 					 <select name="is_show" class="required ruler">
-					 	<option value="0">是</option>
-					 	<option value="1">否</option>
+					 	<option value="0" <if condition="$article_info.is_show eq 0">selected</if>>是</option>
+					 	<option value="1" <if condition="$article_info.is_show eq 1">selected</if>>否</option>
 					 </select>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">发布时间：</td>
 				<td>
-					 <input name="create_time" type="text" class="Wdate required ruler" value="" onfocus="WdatePicker()" />
+					 <input name="create_time" type="text" class="Wdate required ruler" value="{$article_info.create_time}" onfocus="WdatePicker()" />
 					 <span class="require-field">*</span>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">文章摘要：</td>
-				<td><textarea rows="5" cols="53" name="summary"></textarea></td>
+				<td><textarea rows="5" cols="53" name="summary">{$article_info.summary}</textarea></td>
 			</tr>
 			<tr>
 				<td class="label">内容正文：</td>
 				<td>
-					<textarea name="content" id="content" class="required"></textarea>
+					<textarea name="content" id="content" class="required">{$article_info.content}</textarea>
 					<span class="require-field">*</span>
 				</td>
 			</tr>
