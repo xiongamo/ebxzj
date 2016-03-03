@@ -6,6 +6,9 @@ namespace Home\Controller;
  */
 class KnowledgeController extends BaseController{
 	
+	public function _initialize(){
+		$this->assign('menuitem', 'knowledge');
+	}
 	/**
 	 * 保险知识首页
 	 * @author mochaokai

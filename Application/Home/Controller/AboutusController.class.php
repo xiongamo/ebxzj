@@ -6,6 +6,9 @@ namespace Home\Controller;
  */
 class AboutusController extends BaseController{
 	
+	public function _initialize(){
+		$this->assign('menuitem', 'aboutus');
+	}
 	/**
 	 * 关于我们首页
 	 * @author mochaokai

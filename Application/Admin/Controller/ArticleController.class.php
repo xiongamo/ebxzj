@@ -75,7 +75,20 @@ class ArticleController extends BaseController{
 		}
 		$article = D('Common/Article');
 		if(IS_POST){
-			
+			$data['title'] = I('title');
+			$data['short_title'] = I('short_title');
+			$data['is_show'] = I('is_show');
+			$data['create_time'] = I('create_time');
+			$data['summary'] = I('summary');
+			$data['content'] = I('content');
+			$result = $article->article_update($id, $data);
+			if($result){
+				$this->success('修改成功', __CONTROLLER__.'/index');
+				exit;
+			}else{
+				$this->error('修改失败', __CONTROLLER__.'modify');
+				exit;
+			}
 		}
 		$article_info = $article->article_info($id);
 		$article_type = C('article');

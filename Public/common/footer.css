@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.my-list-inline>li{
+	display:inline-block;
+	padding-right:10px;
+	padding-left:30px;
+	padding-top:20px;
+}
+.my-list-inline>li>a{
+	color:#ffffff;
+	font-weight:bold;
+}
+.my-list-inline>li>img{
+	width:100px;
+	height:100px;
+}
