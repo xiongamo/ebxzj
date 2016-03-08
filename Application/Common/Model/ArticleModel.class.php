@@ -60,6 +60,8 @@ class ArticleModel extends BaseModel{
 	 * @author mochoakai
 	 */
 	public function article_info($id){
-		return $this->where(array('id' => $id))->find();
+		$result = $this->where(array('id' => $id))->find();
+		$result['content'] = htmlspecialchars_decode($result['content']);
+		return $result;
 	}
 }

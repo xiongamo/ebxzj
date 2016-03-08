@@ -6,7 +6,7 @@ return array(
 				'id' => 1,
 					'name' => '保险知识',
 			),
-			'direct' => array(
+			'guide' => array(
 				'id' => 2,
 				'name' => '理赔指引'
 			),
