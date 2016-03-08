@@ -9,7 +9,8 @@ class IndexController extends Controller {
 #index
 	public function index(){
 		if(!$_SESSION['user']){
-			header('location:'.U('admin/Index/login'));
+// 			header('location:'.__APP__.U('admin/index/login'));
+			redirect(U('Index/login'));
 			return ;
 		}
 		$this->display();
@@ -61,7 +62,8 @@ class IndexController extends Controller {
 				#跳转
 				if(isset($user_info['id']))
 				{
-					session('user',$user_info['id']);
+// 					session('user',$user_info['id']);
+					$_SESSION['user'] = $user_info['id'];
 					redirect(U('admin/Index/index'));
 				}
 				else

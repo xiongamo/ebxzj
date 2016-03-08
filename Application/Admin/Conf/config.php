@@ -10,6 +10,6 @@ return array(
 		),
 		
 		//图片等文件保存路径
-		'UPLOAD_DIR' => '../Uploads/',
+		'UPLOAD_DIR' => 'Uploads/',
 		'DOMAIN' => 'http://192.168.31.240',
 );

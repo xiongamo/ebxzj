@@ -21,6 +21,9 @@ define('APP_DEBUG',True);
 define('APP_PATH','./Application/');
 define('ADMIN_PATH','./Application/Admin');
 define('WAP_PATH', './Application/Mobile');
+// define('__ROOT__', 'http://xmshare.cn');
+define('__ROOT__', 'http://www.dev.ebxzj.com');
+define('__APP__', __ROOT__.'/index.php');
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
