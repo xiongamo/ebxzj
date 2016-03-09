@@ -36,7 +36,7 @@ class GuideController extends BaseController{
 	public function add(){
 		$article_type = C('article');
 		if(IS_POST){
-			$data['type_id'] = $article_type['knowledge']['id'];
+			$data['type_id'] = $article_type['guide']['id'];
 			$data['title'] = I('title');
 			$data['short_title'] = I('short_title');
 			$data['is_show'] = I('is_show');
@@ -88,5 +88,41 @@ class GuideController extends BaseController{
 		$this->assign('article_type', $article_type['guide']['name']);
 		$this->assign('article_info', $article_info);
 		$this->display();
+	}
+	
+	/**
+	 * 删除文章
+	 * @author mochaokai
+	 */
+	public function delete(){
+		$id = (int)I('id');
+		if(!$id){
+			$this->error('参数错误，请重试' );
+			exit;
+		}
+		$article = D('Common/Article');
+		if($article->article_delete($id)){
+			$this->success('删除成功', __CONTROLLER__.'/index');
+		}else{
+			$this->error('删除失败', __CONTROLLER__.'/index');
+		}
+	
+	}
+	
+	/**
+	 * 设置显示/隐藏
+	 * @author mochaokai
+	 */
+	public function set(){
+		$state = (int)I('state');
+		$id = (int)I('id');
+		$data = array('is_show' => $state);
+	
+		$article = D('Common/Article');
+		if($article->article_update($id, $data)){
+			$this->success('操作成功', __CONTROLLER__.'/index');
+		}else{
+			$this->error('操作失败', __CONTROLLER__.'/index');
+		}
 	}
 }

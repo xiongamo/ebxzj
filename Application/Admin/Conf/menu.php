@@ -14,7 +14,7 @@ return array(
 						'class'=>'explode',
 						'list'    =>array(
 								array('/Article','保险知识'),
-								array('/Hotel/region_list','理赔流程'),
+								array('/Guide','理赔流程'),
 								array('/Region/hot_region_list','首页图片滚动'),
 						)
 				),
