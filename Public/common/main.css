@@ -8,7 +8,7 @@ body{
 }
 img{
 	width:100%;
-	height:auto;
+	height:300px;
 }
 .panel-default>.panel-heading{
 	color:#ffffff;
@@ -17,4 +17,7 @@ img{
 a.my-list-backcolor:hover, a.my-list-backcolor:focus{
 	background-color:#3498DB;
 	color:#C0392B;
+}
+.my-block-space{
+	margin-top:10px;
 }
