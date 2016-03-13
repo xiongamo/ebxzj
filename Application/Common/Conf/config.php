@@ -15,5 +15,4 @@ return array(
 		'LOAD_EXT_CONFIG' => array(
 			'article',
 		),
-		'siteurl' => 'http://www.xmshare.cn',
 );

@@ -57,7 +57,7 @@ class ArticleModel extends BaseModel{
 	/**
 	 * 文章详情信息
 	 * @param $id int 文章id
-	 * @author mochoakai
+	 * @author mochaokai
 	 */
 	public function article_info($id){
 		$result = $this->where(array('id' => $id))->find();
