@@ -4,9 +4,7 @@ namespace Mobile\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-		$model = D('Common/User');
-// 		$model = new \Common\Model\UserModel();
-		print_r($model->lists());
+		$this->display();
     }
     
 }

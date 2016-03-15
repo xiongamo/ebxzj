@@ -1,0 +1,63 @@
+
+<script type="text/x-handlebars-template" id="amz-tpl">
+{{>header header}}
+
+  {{>menu menu}}
+</script>
+<script>
+var $tpl = $('#amz-tpl');
+var source = $tpl.text();
+var template = Handlebars.compile(source);
+var data = {
+  header: {
+    "content": {
+      "title": "e保险之家",
+      "left": [{
+          "link": "",
+          "title": "",
+          "icon": " am-icon-home am-icon-md",
+          "customIcon": "",
+          "className": ""
+      }],
+    }
+  },
+
+  menu: {
+    "options": {
+      "cols": "1",
+      "toggleIcon": "bars am-icon-md",
+    },
+    "className": "my-mobile-header",
+    "content": [
+      {
+        "link": "##",
+        "title": "首页",
+        "icon": "home",
+      },
+      {
+        "link": "##",
+        "title": "保险知识",
+        
+      },
+      {
+        "link": "#c3",
+        "title": "理赔指引",
+        
+      },
+      {
+        "link": "##",
+        "title": "法律援助",
+        
+      },
+      {
+        "link": "##",
+        "title": "关于我们"
+      }
+    ],
+    "theme": "offcanvas1"
+  }
+};
+var html = template(data);
+
+$tpl.before(html);
+</script>

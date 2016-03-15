@@ -1,0 +1,45 @@
+<script type="text/x-handlebars-template" id="amz-foot-tpl">
+{{>footer foot}}
+
+</script>
+<script>
+var $tpl = $('#amz-foot-tpl');
+var source = $tpl.text();
+var template = Handlebars.compile(source);
+var data = {
+		foot:{
+			  "id": "",
+
+			  "className": "",
+
+			  "theme": "default",
+
+			  "options": {
+			     "modal": "",
+			     "techSupprtCo": "",
+			     "techSupprtNet": "",
+			     "textPosition": ""
+			  },
+
+			  "content": {
+			    "lang": "",
+			    "switchName": "手机版",
+			    "owner": "",
+			    "slogan": "",
+			    "companyInfo": [
+			      {
+			        "detail": "e保险之家"
+			      },
+			      {
+			    	  "detail": "由<strong>小莫</strong>提供技术支持"
+			      },
+			      {
+			    	  "detail": "CopyRight©2014  AllMobilize Inc."
+			      }
+			    ]
+			  }
+			}
+};
+var html = template(data);
+$tpl.before(html);
+</script>

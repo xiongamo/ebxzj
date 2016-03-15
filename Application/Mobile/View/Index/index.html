@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<include file="common:head"/>
+</head>
+<body>
+	<include file="common:menu"/>
+	
+	
+	<script type="text/x-handlebars-template" id="amz-slider-tpl">
+	{{>slider slider}}
+
+	</script>
+	<script>
+	var $tpl = $('#amz-slider-tpl');
+	var source = $tpl.text();
+	var template = Handlebars.compile(source);
+	var data = {
+	  slider:{
+			  // id
+			  "id": "slider",
+
+			  // 自定义 class
+			  "className": "",
+
+			  // 主题
+			  "theme": "c4",
+
+			  // 配置，根据需求进行设置，传递 JSON 字符串
+			  "sliderConfig": "{}",
+
+			  //内容（*为必备项）
+			  "content": [
+			    {
+			      "img": "__PUBLIC__/image/location_3.jpg",
+			      "link": "", // 链接
+			      "className": "",
+			      "thumb": "", // 缩略图
+			      "desc": "e保险知识" // 附加信息，支持DOM，为高级定制提供DOM接口
+			    },
+			    {
+			      "img": "__PUBLIC__/image/location_3.jpg",
+			      "link": "", // 链接
+			      "className": "",
+			      "thumb": "", // 缩略图
+			      "desc": "e保险知识" // 附加信息，支持DOM，为高级定制提供DOM接口
+			    },
+			  ]
+			}
+	};
+	var html = template(data);
+
+	$tpl.before(html);
+	$(function() {
+		  $('.am-slider-manual').flexslider({
+		  // options
+		  });
+		});
+	</script>
+	<include file="common:footer"/>
+</body>
+</html>
