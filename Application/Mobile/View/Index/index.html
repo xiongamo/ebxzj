@@ -2,6 +2,7 @@
 <html>
 <head>
 <include file="common:head"/>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/mobile/index/index.css">
 </head>
 <body>
 	<include file="common:menu"/>
@@ -56,6 +57,119 @@
 		  // options
 		  });
 		});
+	</script>
+	<!-- 幻灯片end -->
+	<div class="am-g my-icon" style="margin-top:2px;">
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-home am-icon-lg"></span><br>
+				首页
+			</div>
+		</div>
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-tv am-icon-lg"></span><br>
+				投保
+			</div>
+		</div>
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-automobile am-icon-lg"></span><br>
+				理赔
+			</div>
+		</div>
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-tv am-icon-lg"></span><br>
+				退保
+			</div>
+		</div>
+	</div>
+	<div class="am-g my-icon">
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-book am-icon-lg"></span><br>
+				法律援助
+			</div>
+		</div>
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-tv am-icon-lg"></span><br>
+				车辆管理
+			</div>
+		</div>
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-question-circle am-icon-lg"></span><br>
+				保险论坛
+			</div>
+		</div>
+		<div class="am-u-sm-3" >
+			<div style="background-color: #0e90d2">
+				<span class="am-icon-tv am-icon-lg"></span><br>
+				关于我们
+			</div>
+		</div>
+	</div>
+	<!-- menu end -->
+	
+	<script type="text/javascript"  id="amz-list-tpl">
+	{{>list_news list}}
+	</script>
+	<script type="text/javascript">
+	var $tpl = $('#amz-list-tpl');
+	var source = $tpl.text();
+	var template = Handlebars.compile(source);
+	var data = {
+			list:{
+				  // id
+				  "id": "list",
+
+				  // 自定义 class
+				  "className": "",
+
+				  // 主题
+				  "theme": "default1",
+
+				  "options": {
+				   // normal、thumb
+				    "type": "",
+
+				    // 当type为 thumb 时必传
+				    "thumbPosition": "bottom"
+				    // top-一般用于全宽模式
+				    // bottom - bottom-left | bottom-right
+				    // left - right
+				  },
+
+				  // 数据传递
+				  "content": {
+				    "header": {
+				      "title": "最新文章", // 栏目标题
+				      "link": "###",
+				      "className": "",
+				      "moreText": "更多 >", // 更多链接显示文字
+				      "morePosition": "top" // 【更多】链接位置，top、bottom，如果不设置则不显示更多链接
+				    },
+				    main: [
+				      {
+				        "title": "保险知识", // 新闻标题
+				        "link": "#",  // 新闻链接
+				        "className": "",  // 自定 class
+				        "date": "2016-01-08",  // 日期
+				        "desc": "最新2016车险知识",  // 摘要信息，支持html
+				       // "img": "", // 图片链接
+
+				        // 数据接口
+				        "thumbAddition": "", // 缩略图附加信息，可传 html，thumb 模式下有效，显示在缩略图下面
+				        "mainAddition": ""  // 附加信息，可传 html，任何模式下都有效
+				      }
+				    ]
+				}
+	}};
+			var html = template(data);
+
+			$tpl.before(html);
 	</script>
 	<include file="common:footer"/>
 </body>

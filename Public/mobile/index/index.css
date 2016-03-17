@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+body{
+	font-family: '幼圆';
+}
+[class*=am-u-]{
+	padding-left: 0;
+	padding-right: 0;
+}
+.my-icon div{
+	text-align: center;
+}
+.my-icon div div{
+	margin: 1px;
+	color:#ffffff;
+}
