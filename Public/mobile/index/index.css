@@ -15,3 +15,6 @@ body{
 .my-icon div div a{
 	color:#ffffff;
 }
+i:before{
+	margin:10px;
+}
