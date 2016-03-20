@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<include file="common:head"/>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/mobile/index/index.css">
+</head>
+<body>
+	<include file="common:menu"/>
+	 <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
+	<script type="text/javascript" id="am-aboutus-tpl">
+	{{>paragraph content}}
+	</script>
+	<script type="text/javascript">
+	var $tpl = $('#am-aboutus-tpl');
+	var source = $tpl.text();
+	var template = Handlebars.compile(source);
+	var data = {
+			content:{
+					  "id": "",
+
+					  "className": "",
+
+					  "theme": "default",
+
+					  "options": {
+					    "imgLightbox": false, // 图片查看器
+					    "tableScrollable": false // 表格横向滚动功能
+					  },
+
+					  "content": {
+					    "content": "东南极洲是一块很古老的大陆，据科学家推算,已有几亿年的历史。它的中心位于难接近点，从任何海边到难接近点的距离都很远。东南极洲平均海拔高度2500米，最大高度4800 米。在东南极洲有南极大陆最大的活火山，即位于罗斯岛上的埃里伯斯火山，海拔高度3795米，有四个喷火口"
+					  }
+					}
+	}
+	var html = template(data);
+	$tpl.before(html);
+	</script>
+	<include file="common:footer"/>
+</body>
+</html>

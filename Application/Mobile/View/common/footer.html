@@ -1,6 +1,6 @@
 <script type="text/x-handlebars-template" id="amz-foot-tpl">
 {{>footer foot}}
-
+{{>navbar nav}}
 </script>
 <script>
 var $tpl = $('#amz-foot-tpl');
@@ -38,6 +38,45 @@ var data = {
 			      }
 			    ]
 			  }
+			},
+			nav:{
+				"id": "",
+
+				  "className": "",
+
+				  "theme": "default",
+
+				  "options": {
+				      "cols": "3", //cols 值 ：列数，若数据列数较多，会自动添加一个列表
+				  },
+
+				  "content": [
+				    /* {
+				      "title": "二维码", // title 值：要显示的文本
+				      "link": "", // link 值 ：链接地址，电话则写"tel:0101245678"
+				      "className": "",
+				      "customIcon": "", // customIcon与icon选用其中之一，customIcon用于上传的小图标/ 写法： "customIcon": "xxx.png"
+				      "icon": "qrcode",//icon 值：使用icon font 例如：分享的图标 am-icon-share ，icon写法： "icon": "share" ,更多的查看amui icon 目录下
+				      "dataApi": "data-am-navbar-qrcode"//dataApi 值为 data-am-navbar-share（用于分享模块） 或者 data-am-navbar-qrcode(用于二维码模块) 若使用自己上传的二维码 'data-am-navbar-qrcode = 二维码地址' 即可
+				      }, */
+				      {
+				    	  "title": "电话", // title 值：要显示的文本
+					      "link": "tel:15519047376", // link 值 ：链接地址，电话则写"tel:0101245678"
+					      "className": "",
+					      "customIcon": "", // customIcon与icon选用其中之一，customIcon用于上传的小图标/ 写法： "customIcon": "xxx.png"
+					      "icon": "phone",//icon 值：使用icon font 例如：分享的图标 am-icon-share ，icon写法： "icon": "share" ,更多的查看amui icon 目录下
+					      "dataApi": ""
+				      },
+				      {
+				    	  "title": "分享", // title 值：要显示的文本
+					      "link": "", // link 值 ：链接地址，电话则写"tel:0101245678"
+					      "className": "",
+					      "customIcon": "", // customIcon与icon选用其中之一，customIcon用于上传的小图标/ 写法： "customIcon": "xxx.png"
+					      "icon": "share",//icon 值：使用icon font 例如：分享的图标 am-icon-share ，icon写法： "icon": "share" ,更多的查看amui icon 目录下
+					      "dataApi": "data-am-navbar-share"
+				      }
+				      
+				  ]
 			}
 };
 var html = template(data);

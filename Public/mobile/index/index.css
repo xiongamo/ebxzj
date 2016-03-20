@@ -11,5 +11,7 @@ body{
 }
 .my-icon div div{
 	margin: 1px;
+}
+.my-icon div div a{
 	color:#ffffff;
 }
