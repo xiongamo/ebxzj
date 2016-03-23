@@ -12,6 +12,8 @@ return array(
 		'TMPL_L_DELIM'=>'{',
 		'TMPL_R_DELIM'=>'}',
 		
+		'URL_MODEL' => 0,
+		
 		'LOAD_EXT_CONFIG' => array(
 			'article',
 		),

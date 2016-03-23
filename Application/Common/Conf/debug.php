@@ -8,7 +8,7 @@ return array(
 		'DB_PWD'    => 'Jinpaibaoxian123', // 密码
 		'DB_PORT'   => 3306, // 端口
 		'DB_PREFIX' => 't_', // 数据库表前缀
-		
+		'URL_MODEL' => 0,
 		'TMPL_L_DELIM'=>'{',
 		'TMPL_R_DELIM'=>'}',
 		
