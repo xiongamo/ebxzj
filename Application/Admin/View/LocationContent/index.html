@@ -4,7 +4,7 @@
 	<span id="search_id" class="action-span1">
 		列表
 	</span>
-	<span class="action-span"><a href="__URL__/add">添加</a></span>
+	<span class="action-span"><a href="<php>echo U('admin/LocationContent/add');</php>">添加</a></span>
 </h1>
 <!-- menu end -->
 
@@ -37,15 +37,15 @@
 		<?php endif;?>
 		<?php if($value['is_show']):?>
 		<td>
-			<a href="__CONTROLLER__/set?state=0&id={$value.id}">显示</a>
-			<a href="__CONTROLLER__/modify?id={$value.id}">修改</a>
-			<a href="javascript:;" onclick="delete_article(this)" url="__CONTROLLER__/delete?id={$value.id}">删除</a>
+			<a href="<php>echo U('admin/locationcontent/set');</php>&state=0&id={$value.id}">显示</a>
+			<a href="<php>echo U('admin/locationcontent/modify');</php>&id={$value.id}">修改</a>
+			<a href="javascript:;" onclick="delete_article(this)" url="<php>echo U('admin/locationcontent/delete');</php>&id={$value.id}">删除</a>
 		</td>
 		<?php else:?>
 		<td>
-			<a href="__CONTROLLER__/set?state=1&id={$value.id}">隐藏</a>
-			<a href="__CONTROLLER__/modify?id={$value.id}">修改</a>
-			<a href="javascript:;" onclick="delete_article(this)" url="__CONTROLLER__/delete?id={$value.id}">删除</a>
+			<a href="<php>echo U('admin/locationcontent/set');</php>&state=1&id={$value.id}">隐藏</a>
+			<a href="<php>echo U('admin/locationcontent/modify');</php>&id={$value.id}">修改</a>
+			<a href="javascript:;" onclick="delete_article(this)" url="<php>echo U('admin/locationcontent/delete');</php>&id={$value.id}">删除</a>
 		</td>
 		<?php endif;?>
 	</tr>

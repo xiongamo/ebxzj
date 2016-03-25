@@ -14,15 +14,15 @@
 // 检测PHP环境
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
-define('APP_DEBUG',false);
+define('APP_DEBUG',true);
 
 // 定义应用目录
 define('APP_PATH','./Application/');
 define('ADMIN_PATH','./Application/Admin');
 define('WAP_PATH', './Application/Mobile');
-// define('__ROOT__', 'http://www.dev.ebxzj.com');
+define('__ROOT__', 'http://www.dev.ebxzj.com');
 // define('__ROOT__', 'http://xmshare.cn');
-define('__ROOT__', 'http://15285116742.com');
+// define('__ROOT__', 'http://15285116742.com');
 define('__APP__', __ROOT__.'/index.php');
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
