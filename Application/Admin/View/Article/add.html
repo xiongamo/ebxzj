@@ -2,13 +2,13 @@
 <!-- menu start -->
 <h1>
 	<span class="action-span1">添加保险知识文章内容</span>
-	<span class="action-span"><a href="__URL__">返回列表</a></span>
+	<span class="action-span"><a href="<php>echo U('admin/article/index');</php>">返回列表</a></span>
 </h1>
 <!-- menu end -->
 
 <!-- edit begin -->
 <div class="main-div">
-	<form method="post" id="form" action="__CONTROLLER__/add">
+	<form method="post" id="form" action="<php>echo U('admin/article/add');</php>">
 		<table cellspacing="1" cellpadding="3" width="100%">
 			<tr>
 				<td class="label">所属分类：</td>
