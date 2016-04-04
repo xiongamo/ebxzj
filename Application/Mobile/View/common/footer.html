@@ -28,13 +28,13 @@ var data = {
 			    "slogan": "",
 			    "companyInfo": [
 			      {
-			        "detail": "e保险之家"
+			        "detail": "{$web_name}"
 			      },
 			      {
-			    	  "detail": "由<strong>小莫</strong>提供技术支持"
+			    	  "detail": "由<strong>{$web_support}</strong>提供技术支持"
 			      },
 			      {
-			    	  "detail": "CopyRight©2014  AllMobilize Inc."
+			    	  "detail": "{$web_beian}"
 			      }
 			    ]
 			  }
@@ -61,7 +61,7 @@ var data = {
 				      }, */
 				      {
 				    	  "title": "电话", // title 值：要显示的文本
-					      "link": "tel:15519047376", // link 值 ：链接地址，电话则写"tel:0101245678"
+					      "link": "tel:{$web_tel}", // link 值 ：链接地址，电话则写"tel:0101245678"
 					      "className": "",
 					      "customIcon": "", // customIcon与icon选用其中之一，customIcon用于上传的小图标/ 写法： "customIcon": "xxx.png"
 					      "icon": "phone",//icon 值：使用icon font 例如：分享的图标 am-icon-share ，icon写法： "icon": "share" ,更多的查看amui icon 目录下

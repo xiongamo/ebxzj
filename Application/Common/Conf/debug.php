@@ -12,9 +12,7 @@ return array(
 		'TMPL_L_DELIM'=>'{',
 		'TMPL_R_DELIM'=>'}',
 		
-		'LOAD_EXT_CONFIG' => array(
-			'article',
-		),
+		'LOAD_EXT_CONFIG' => 'article,webinfo',
 		
 		//图片等文件保存路径
 		'UPLOAD_DIR' => '../Uploads/'

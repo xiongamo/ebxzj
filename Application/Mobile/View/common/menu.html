@@ -11,9 +11,9 @@ var template = Handlebars.compile(source);
 var data = {
   header: {
     "content": {
-      "title": "e保险之家",
+      "title": "{$web_name}",
       "left": [{
-          "link": "__MODULE__/Index",
+          "link": "<php>echo U('mobile/index/index')</php>",
           "title": "",
           "icon": " am-icon-home am-icon-md",
           "customIcon": "",
@@ -30,27 +30,22 @@ var data = {
     "className": "my-mobile-header",
     "content": [
       {
-        "link": "__MODULE__/Index",
+        "link": "<php>echo U('mobile/index/index')</php>",
         "title": "首页",
         "icon": "home",
       },
       {
-        "link": "__MODULE__/Knowledge",
+        "link": "<php>echo U('mobile/knowledge/index')</php>",
         "title": "保险知识",
         
       },
       {
-        "link": "__MODULE__/Knowledge",
+        "link": "<php>echo U('mobile/knowledge/index')</php>",
         "title": "理赔指引",
         
       },
       {
-        "link": "##",
-        "title": "法律援助",
-        
-      },
-      {
-        "link": "__MODULE__/Aboutus",
+        "link": "<php>echo U('mobile/aboutus/index')</php>",
         "title": "关于我们"
       }
     ],

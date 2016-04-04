@@ -14,7 +14,5 @@ return array(
 		
 		'URL_MODEL' => 0,
 		
-		'LOAD_EXT_CONFIG' => array(
-			'article',
-		),
+		'LOAD_EXT_CONFIG' => 'article,webinfo',
 );

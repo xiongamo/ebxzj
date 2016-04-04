@@ -32,20 +32,15 @@
 
 			  //内容（*为必备项）
 			  "content": [
+			    <volist name="lc" id="value">
 			    {
-			      "img": "__PUBLIC__/image/location_3.jpg",
-			      "link": "", // 链接
+			      "img": "{$value.img}",
+			      "link": "{$value.url}", // 链接
 			      "className": "",
 			      "thumb": "", // 缩略图
-			      "desc": "e保险知识" // 附加信息，支持DOM，为高级定制提供DOM接口
+			      "desc": "{$value.title}" // 附加信息，支持DOM，为高级定制提供DOM接口
 			    },
-			    {
-			      "img": "__PUBLIC__/image/location_3.jpg",
-			      "link": "", // 链接
-			      "className": "",
-			      "thumb": "", // 缩略图
-			      "desc": "e保险知识" // 附加信息，支持DOM，为高级定制提供DOM接口
-			    },
+			    </volist>
 			  ]
 			}
 	};
@@ -62,7 +57,7 @@
 	<div class="am-g my-icon" style="margin-top:2px;">
 		<div class="am-u-sm-3" >
 			<div style="background-color: #0e90d2">
-				<a href="__MODULE__/Index">
+				<a href="<php>echo U('mobile/index/index')</php>">
 				<span class="am-icon-home am-icon-lg"></span><br>
 				首页
 				</a>
@@ -112,7 +107,7 @@
 		</div>
 		<div class="am-u-sm-3" >
 			<div style="background-color: #0e90d2">
-				<a href="__MODULE__/Knowledge">
+				<a href="<php>echo U('mobile/knowledge/index')</php>">
 				<span class="am-icon-question-circle am-icon-lg"></span><br>
 				保险知识
 				</a>
@@ -120,7 +115,7 @@
 		</div>
 		<div class="am-u-sm-3" >
 			<div style="background-color: #0e90d2">
-				<a href="__MODULE__/Aboutus">
+				<a href="<php>echo U('mobile/aboutus/index')</php>">
 				<span class="am-icon-tv am-icon-lg"></span><br>
 				关于我们
 				</a>
@@ -162,24 +157,26 @@
 				  "content": {
 				    "header": {
 				      "title": "最新文章", // 栏目标题
-				      "link": "###",
+				      "link": "<php>echo U('mobile/knowledge/index')</php>",
 				      "className": "",
 				      "moreText": "更多 >", // 更多链接显示文字
 				      "morePosition": "top" // 【更多】链接位置，top、bottom，如果不设置则不显示更多链接
 				    },
 				    main: [
+				       <volist name="ar" id="value">
 				      {
-				        "title": "保险知识", // 新闻标题
-				        "link": "#",  // 新闻链接
+				        "title": "{$value.title}", // 新闻标题
+				        "link": "<php>echo U('mobile/knowledge/info', array('id' => $value['id']))</php>",  // 新闻链接
 				        "className": "",  // 自定 class
-				        "date": "2016-01-08",  // 日期
-				        "desc": "最新2016车险知识",  // 摘要信息，支持html
+				        "date": "{$value.create_time}",  // 日期
+				        "desc": "{$value.short_title}",  // 摘要信息，支持html
 				       // "img": "", // 图片链接
 
 				        // 数据接口
 				        "thumbAddition": "", // 缩略图附加信息，可传 html，thumb 模式下有效，显示在缩略图下面
 				        "mainAddition": ""  // 附加信息，可传 html，任何模式下都有效
-				      }
+				      },
+				      </volist>
 				    ]
 				}
 	}};
