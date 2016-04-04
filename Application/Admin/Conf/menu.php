@@ -15,7 +15,7 @@ return array(
 						'list'    =>array(
 								array('/Article','保险知识'),
 								array('/Guide','理赔流程'),
-								array('/LocationContent','首页图片滚动'),
+								array('/Locationcontent','首页图片滚动'),
 						)
 				),
 				
