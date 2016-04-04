@@ -15,4 +15,5 @@ return array(
 		'URL_MODEL' => 0,
 		
 		'LOAD_EXT_CONFIG' => 'article,webinfo',
+		'LOAD_EXT_FILE' => 'function',
 );

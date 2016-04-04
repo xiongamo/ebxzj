@@ -7,6 +7,10 @@ namespace Mobile\Controller;
 class KnowledgeController extends BaseController{
 	
 	public function index(){
+		$article = D('Common/Article');
+		$list = $article->article_list();
+		
+		$this->assign('list', $list);
 		$this->display();
 	}
 	

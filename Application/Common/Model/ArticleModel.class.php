@@ -9,6 +9,7 @@ class ArticleModel extends BaseModel{
 	 * @param $field array 字段域
 	 */
 	public function article_list($where = array(), $limit = 0, $offset = 0, $field = array()){
+		$where['is_del'] = 0;
 		if($limit){
 			$result = $this->where($where)->limit($offset, $limit)->field($field)->select();
 		}else{
