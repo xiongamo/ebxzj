@@ -5,4 +5,5 @@ return array(
 		'web_support' => '小莫',
 		'web_name' => '金牌保险',
 		'web_tel' => '15519047376',
+		'web_owner' => '杨再坤',
 );

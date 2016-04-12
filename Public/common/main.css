@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 body{
-	font-family:微软雅黑;
+	font-family: "幼圆";
 	background:#fff;
 }
 .my-box-shadow{
@@ -11,8 +11,8 @@ img{
 	height:300px;
 }
 .panel-default>.panel-heading{
-	color:#ffffff;
-	background-color:#1abc9c;
+	color:#000000;
+	background-color:#0099cc;
 }
 a.my-list-backcolor:hover, a.my-list-backcolor:focus{
 	background-color:#3498DB;

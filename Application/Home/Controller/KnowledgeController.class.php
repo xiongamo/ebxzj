@@ -7,6 +7,7 @@ namespace Home\Controller;
 class KnowledgeController extends BaseController{
 	
 	public function _initialize(){
+		parent::_initialize();
 		$this->assign('menuitem', 'knowledge');
 	}
 	/**

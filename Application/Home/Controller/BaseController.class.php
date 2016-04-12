@@ -11,4 +11,12 @@ class BaseController extends Controller {
 			redirect(U('mobile/index/index'));
 		}
 	}
+	
+	public function _initialize(){
+		$this->assign('web_name', C('web_name'));
+		$this->assign('web_support', C('web_support'));
+		$this->assign('web_beian', C('web_beian'));
+		$this->assign('web_tel', C('web_tel'));
+		$this->assign('web_owner', C('web_owner'));
+	}
 }

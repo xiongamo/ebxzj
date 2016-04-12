@@ -10,7 +10,7 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <include file="common:head"/>
-<title>e保险之家</title>
+<title>{$web_name}</title>
 </head>
 <body>
 	
@@ -19,34 +19,46 @@
 	
 	
 	<div class="container my-block-space">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<div style="height:400px;" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
-		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		    <volist name="lc_list" id="value">
+		    <if condition="$i eq 1">
+		    <li data-target="#carousel-example-generic" data-slide-to="{$i}" class="active"></li>
+		    <else/>
+		    <li data-target="#carousel-example-generic" data-slide-to="{$i}"></li>
+		    </if>
+		    </volist>
 		  </ol>
 		
 		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner my-box-shadow" role="listbox">
-		    <div class="item active">
-		      <img src="__PUBLIC__/image/location_1.jpg" alt="...">
+		  <div class="carousel-inner my-box-shadow" role="listbox" style="width:100%; height:100%">
+		  	<volist name="lc_list" id="value">
+		  	<if condition="$i eq 1">
+		  	
+		  	<div class="item active" style="width:100%; height:100%">
+		  	<a href="{$value.url}">
+		      <img src="{$value.img}" alt="{$value.title}" style="width:100%; height:100%">
 		      <div class="carousel-caption">
-		        ...
+		        {$value.title}
 		      </div>
+		      </a>
 		    </div>
-		    <div class="item">
-		      <img src="__PUBLIC__/image/location_2.jpg" alt="...">
+		    
+		  	<else/>
+		  	
+		  	<div class="item" style="width:100%; height:100%">
+		  		<a href="{$value.url}">
+		      <img src="{$value.img}" alt="{$value.title}" style="width:100%; height:100%">
 		      <div class="carousel-caption">
-		        ...
+		        {$value.title}
 		      </div>
+		      </a>
 		    </div>
-		    <div class="item">
-				<img src="__PUBLIC__/image/location_3.jpg" alt="...">
-		      <div class="carousel-caption">
-		        ...
-		      </div>		    
-		    </div>
+		    
+		  	</if>
+		  	</volist>
+		    
 		  </div>
 		
 		  <!-- Controls -->
@@ -62,24 +74,16 @@
 	
 		<div class="row my-block-space">
 			<div class="col-sm-3 demo-tiles ">
-				<div class="tile my-box-shadow">
-					<img class="tile-image big-illustration" alt="" title="扫描添加微信好友" src="__PUBLIC__/image/erweima.jpg">
-					<h3 class="tile-title">吴宗宪</h3>
-					<p>电话：14252526369</p>
-					<a class="btn btn-primary btn-large btn-block" href="javascript:void(0)">联系站长</a>
-				</div>
+				<include file="common:call_card"/>
 			</div>
 			<div class="col-sm-9">
 				<div class="panel panel-default my-box-shadow">
-					<div class="panel-heading my-panel-heading">最新资讯</div>
+					<div class="panel-heading my-panel-heading">最新资讯<a class="" href="" style="color:#ffffff; float:right; ">更多...</a></div>
 					<div class="panel-body">
 						<div class="list-group">
-							<a href="#" class="list-group-item">保险知识</a>
-							<a href="#" class="list-group-item">保险知识</a>
-							<a href="#" class="list-group-item">保险知识</a>
-							<a href="#" class="list-group-item">保险知识</a>
-							<a class="list-group-item">保险知识</a>
-							<a class="list-group-item">保险知识</a>
+							<volist name="ar_list" id="value">
+							<a class="list-group-item" href="<php>echo U('home/knowledge/info', array('id'=>$value['id']))</php>"><span class="glyphicon glyphicon-book"></span> {$value.title}</a>
+							</volist>
 						</div>
 					</div>
 				</div>
