@@ -96,10 +96,10 @@ function reloadEdit(content){
 			width :'700px',
 			height:'400px',
 			//指定上传文件的服务器端程序。
-			uploadJson : APP_DIR+'KindEditor/upload_json',
+			uploadJson : APP_DIR+'?m=admin&c=KindEditor&a=upload_json',
 
 			//指定浏览远程图片的服务器端程序。
-			fileManagerJson : APP_DIR+'KindEditor/file_manager_json',
+			fileManagerJson : APP_DIR+'?m=admin&c=KindEditor&a=file_manager_json',
 
 			//true时显示浏览远程服务器按钮。
 			allowFileManager : true,
@@ -131,10 +131,10 @@ function uploadImg(show,save,showRemote){
 	KindEditor.ready(function(K) {
 		var editor = K.editor({
 			//指定上传文件的服务器端程序。
-			uploadJson : APP_DIR+'KindEditor/upload_json',
+			uploadJson : APP_DIR+'?m=admin&c=KindEditor&a=upload_json',
 
 			//指定浏览远程图片的服务器端程序。
-			fileManagerJson : APP_DIR+'KindEditor/file_manager_json',
+			fileManagerJson : APP_DIR+'?m=admin&c=KindEditor&a=file_manager_json',
 
 			//true时显示浏览远程服务器按钮。
 			allowFileManager : true
@@ -167,10 +167,10 @@ function uploadMp3(show,save,showRemote){
 	KindEditor.ready(function(K) {
 		var editor = K.editor({
 			//指定上传文件的服务器端程序。
-			uploadJson : APP_DIR+'KindEditor/upload_json',
+			uploadJson : APP_DIR+'?m=admin&c=KindEditor&a=upload_json',
 
 			//指定浏览远程图片的服务器端程序。
-			fileManagerJson : APP_DIR+'KindEditor/file_manager_json',
+			fileManagerJson : APP_DIR+'?m=admin&c=KindEditor&a=file_manager_json',
 
 			//true时显示浏览远程服务器按钮。
 			allowFileManager : true
