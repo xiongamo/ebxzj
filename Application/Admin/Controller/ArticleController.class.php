@@ -44,10 +44,10 @@ class ArticleController extends BaseController{
 			$data['content'] = I('content');
 			$article = D('Common/Article');
 			if($article->article_add($data)){
-				$this->success('保存成功', __CONTROLLER__.'/index');
+				$this->success('保存成功', U('admin/article/index'));
 				exit;
 			}else{
-				$this->error('保存失败', __CONTROLLER__.'/add');
+				$this->error('保存失败');
 				exit;
 			}
 		}
@@ -62,7 +62,7 @@ class ArticleController extends BaseController{
 	public function modify(){
 		$id = (int)I('id');
 		if(!$id){
-			$this->error('参数错误', __CONTROLLER__.'/index');
+			$this->error('参数错误', U('admin/article/index'));
 			exit;
 		}
 		$article = D('Common/Article');
@@ -75,10 +75,10 @@ class ArticleController extends BaseController{
 			$data['content'] = I('content', '', 'htmlspecialchars');
 			$result = $article->article_update($id, $data);
 			if($result){
-				$this->success('修改成功', __CONTROLLER__.'/index');
+				$this->success('修改成功', U('admin/article/index'));
 				exit;
 			}else{
-				$this->error('修改失败', __CONTROLLER__.'modify');
+				$this->error('修改失败');
 				exit;
 			}
 		}
@@ -101,9 +101,9 @@ class ArticleController extends BaseController{
 		}
 		$article = D('Common/Article');
 		if($article->article_delete($id)){
-			$this->success('删除成功', __CONTROLLER__.'/index');
+			$this->success('删除成功', U('admin/article/index'));
 		}else{
-			$this->error('删除失败', __CONTROLLER__.'/index');
+			$this->error('删除失败');
 		}
 		
 	}
@@ -124,9 +124,9 @@ class ArticleController extends BaseController{
 		
 		$article = D('Common/Article');
 		if($article->article_update($id, $data)){
-			$this->success('操作成功', __CONTROLLER__.'/index');
+			$this->success('操作成功',U('admin/article/index'));
 		}else{
-			$this->error('操作失败', __CONTROLLER__.'/index');
+			$this->error('操作失败');
 		}
 	}
 }

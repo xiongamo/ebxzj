@@ -48,7 +48,7 @@
 			<a href="<php>echo U('admin/article/set');</php>&commend=0&id={$value.id}">不推荐</a>
 			</if>
 			<a href="<php>echo U('admin/article/modify');</php>&id={$value.id}">修改</a>
-			<a href="javascript:;" onclick="delete_article(this)" url="<php>echo U('admin/article/delete');</php>&id={$value.id}">删除</a>
+			<a onclick="delete_article(this)" href="<php>echo U('admin/article/delete');</php>&id={$value.id}" title="删除">删除</a>
 		</td>
 		<?php else:?>
 		<td>
@@ -59,7 +59,7 @@
 			<a href="<php>echo U('admin/article/set');</php>&commend=0&id={$value.id}">不推荐</a>
 			</if>
 			<a href="<php>echo U('admin/article/modify');</php>&id={$value.id}">修改</a>
-			<a href="javascript:;" onclick="delete_article(this)" url="<php>echo U('admin/article/delete');</php>&id={$value.id}" title="删除">删除</a>
+			<a onclick="delete_article(this)" href="<php>echo U('admin/article/delete');</php>&id={$value.id}" title="删除">删除</a>
 		</td>
 		<?php endif;?>
 	</tr>

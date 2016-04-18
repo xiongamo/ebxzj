@@ -29,7 +29,7 @@ class LocationcontentController extends BaseController{
 			$data['img'] = I('img');
 			$result = $locationcontent->LC_add($data);
 			if($result){
-				$this->success('操作成功', __CONTROLLER__.'/index');
+				$this->success('操作成功', U('admin/locationcontent/index'));
 				exit;
 			}else{
 				$this->error('操作失败');
@@ -59,7 +59,7 @@ class LocationcontentController extends BaseController{
 			$where = array('id' => $id);
 			$result = $locationcontent->LC_set($where, $data);
 			if($result){
-				$this->success('操作成功', __CONTROLLER__.'/index');
+				$this->success('操作成功', U('admin/locationcontent/index'));
 				exit;
 			}else{
 				$this->error('操作失败');
@@ -86,9 +86,9 @@ class LocationcontentController extends BaseController{
 		$locationcontent = D("Common/LocationContent");
 		$result = $locationcontent->LC_set($where, $data);
 		if($result){
-			$this->success('操作成功', __CONTROLLER__.'/index');
+			$this->success('操作成功', U('admin/locationcontent/index'));
 		}else{
-			$this->error('操作失败', __CONTROLLER__.'/index');
+			$this->error('操作失败');
 		}
 	}
 	
@@ -107,7 +107,7 @@ class LocationcontentController extends BaseController{
 		$locationcontent = D('Common/LocationContent');
 		$result = $locationcontent->LC_set($where, $data);
 		if($result){
-			$this->success('操作成功', __CONTROLLER__.'/index');
+			$this->success('操作成功', U('admin/locationcontent/index'));
 		}else{
 			$this->error('操作失败');
 		}
