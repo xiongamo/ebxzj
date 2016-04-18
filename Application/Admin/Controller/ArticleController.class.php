@@ -113,9 +113,14 @@ class ArticleController extends BaseController{
 	 * @author mochaokai
 	 */
 	public function set(){
-		$state = (int)I('state');
 		$id = (int)I('id');
-		$data = array('is_show' => $state);
+		$data = array();
+		if(isset($_GET['state'])){
+			$data['is_show'] = I('state', 0, 'intval');
+		}
+		if(isset($_GET['commend'])){
+			$data['is_commend'] = I('commend', 0, 'intval');
+		}
 		
 		$article = D('Common/Article');
 		if($article->article_update($id, $data)){

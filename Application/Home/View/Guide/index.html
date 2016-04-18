@@ -10,35 +10,36 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <include file="common:head"/>
-<title>理赔指引</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/home/flat_replace.css"/>
+<title>{$web_name}</title>
 </head>
 <body>
-	<div class="container-fluid">
 		<include file="common:menu"/>
-	</div>
-	<div class="container">
+	<div class="container my-block-space">
 		<div class="row">
 			<div class="col-sm-3">
-				<div class="list-group my-box-shadow">
-					<a href="#" class="list-group-item">保险知识</a>
-					<a href="#" class="list-group-item">保险知识</a>
-					<a href="#" class="list-group-item">保险知识</a>
-					<a href="#" class="list-group-item">保险知识</a>
-					<a class="list-group-item">保险知识</a>
-					<a class="list-group-item">保险知识</a>
+				<div class="list-group ">
+					<volist name="commend_list" id="value">
+					<a href="<php>echo U('home/guide/info')</php>&id={$value.id}" class="list-group-item my-list-backcolor"><span class="glyphicon glyphicon-book"></span> {$value.title}</a>
+					</volist>
 				</div>
-				<div class="tile my-box-shadow">
-					<img class="tile-image big-illustration" alt="" title="扫描添加微信好友" src="__PUBLIC__/image/erweima.jpg">
-					<h3 class="tile-title">吴宗宪</h3>
-					<p>电话：14252526369</p>
-					<a class="btn btn-primary btn-large btn-block" href="javascript:void(0)">联系站长</a>
-				</div>
+				<include file="common:call_card"/>
 			</div>
 			<div class="col-sm-9">
-				<div class="container-fluid my-box-shadow">
-					<h3 class="text-center">保险理赔指引</h3>
-					<p></p>
-				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 最新保险知识
+					</div>
+					<div class="panel-body">
+						<div class="list-group my-box-shadow">
+							<volist name="list" id="value">
+							<a href="<php>echo U('home/guide/info')</php>&id={$value.id}" class="list-group-item my-list-backcolor"><span class="glyphicon glyphicon-book"></span> {$value.title}</a>
+							</volist>
+						</div>
+					</div>
+					<div class="panel-footer">
+						{$page}
+					</div>
 				</div>
 			</div>
 		</div>

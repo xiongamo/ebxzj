@@ -15,7 +15,7 @@ class IndexController extends BaseController {
     	
     	//最新新闻
     	$article = D('Common/Article');
-    	$ar_list = $article->article_list(array(), 4);
+    	$ar_list = $article->article_list(array(), array(), 4);
 		$this->assign('ar', $ar_list);
 		$this->display();
     }

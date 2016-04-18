@@ -19,7 +19,7 @@ class IndexController extends BaseController {
     	$this->assign('lc_list', $lc_list);
     	//最新资讯
     	$article = D('Common/Article');
-    	$ar_list = $article->article_list(array(), 10);
+    	$ar_list = $article->article_list(array(), 'create_time desc', 10);
     	$this->assign('ar_list', $ar_list);
     	$this->display();
     }

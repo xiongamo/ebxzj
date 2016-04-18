@@ -8,12 +8,12 @@ class ArticleModel extends BaseModel{
 	 * @param $offset int 查询偏移量
 	 * @param $field array 字段域
 	 */
-	public function article_list($where = array(), $limit = 0, $offset = 0, $field = array()){
+	public function article_list($where = array(), $order = '', $limit = 0, $offset = 0, $field = array()){
 		$where['is_del'] = 0;
 		if($limit){
-			$result = $this->where($where)->limit($offset, $limit)->field($field)->select();
+			$result = $this->where($where)->order($order)->limit($offset, $limit)->field($field)->select();
 		}else{
-			$result = $this->where($where)->field($field)->select();
+			$result = $this->where($where)->order($order)->field($field)->select();
 		}
 		return $result;
 	}
