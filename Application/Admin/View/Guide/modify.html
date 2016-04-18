@@ -2,13 +2,13 @@
 <!-- menu start -->
 <h1>
 	<span class="action-span1">修改保险知识文章内容</span>
-	<span class="action-span"><a href="__URL__">返回列表</a></span>
+	<span class="action-span"><a href="<php>echo U('admin/guide/index')</php>">返回列表</a></span>
 </h1>
 <!-- menu end -->
 
 <!-- edit begin -->
 <div class="main-div">
-	<form method="post" id="form" action="__CONTROLLER__/modify">
+	<form method="post" id="form" action="">
 		<table cellspacing="1" cellpadding="3" width="100%">
 		<input type="hidden" name="id" value="{$article_info.id}">
 			<tr>
@@ -34,8 +34,8 @@
 				<td class="label">是否显示：</td>
 				<td>
 					 <select name="is_show" class="required ruler">
-					 	<option value="0" <if condition="$article_info.is_show eq 0">selected</if>>是</option>
-					 	<option value="1" <if condition="$article_info.is_show eq 1">selected</if>>否</option>
+					 	<option value="0" <if condition="$article_info.is_show eq 0">selected</if>>否</option>
+					 	<option value="1" <if condition="$article_info.is_show eq 1">selected</if>>是</option>
 					 </select>
 				</td>
 			</tr>

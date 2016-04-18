@@ -23,7 +23,6 @@ class GuideController extends BaseController{
 		//文章模型对象
 		$article = D('Common/Article');
 		$list = $article->article_list($where, $limit, $offset);
-		
 		$this->assign('list', $list);
 		$this->display();
 	}
