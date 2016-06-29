@@ -4,6 +4,6 @@ return array(
 		'web_beian' => '黔ICP备15016129号-2',
 		'web_support' => '小莫',
 		'web_name' => '金牌保险',
-		'web_tel' => '15519047376',
-		'web_owner' => '杨再坤',
+		'web_tel' => '',
+		'web_owner' => '杨先生',
 );
