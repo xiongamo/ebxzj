@@ -60,9 +60,9 @@ var data = {
 				      "dataApi": "data-am-navbar-qrcode"//dataApi 值为 data-am-navbar-share（用于分享模块） 或者 data-am-navbar-qrcode(用于二维码模块) 若使用自己上传的二维码 'data-am-navbar-qrcode = 二维码地址' 即可
 				      }, */
 				      {
-				    	  "title": "电话", // title 值：要显示的文本
-					      "link": "tel:{$web_tel}", // link 值 ：链接地址，电话则写"tel:0101245678"
-					      "className": "",
+				    	  "title": "联系我", // title 值：要显示的文本
+					      "link": "#", // link 值 ：链接地址，电话则写"tel:0101245678"
+					      "className": "contact_me",
 					      "customIcon": "", // customIcon与icon选用其中之一，customIcon用于上传的小图标/ 写法： "customIcon": "xxx.png"
 					      "icon": "phone",//icon 值：使用icon font 例如：分享的图标 am-icon-share ，icon写法： "icon": "share" ,更多的查看amui icon 目录下
 					      "dataApi": ""
@@ -81,4 +81,22 @@ var data = {
 };
 var html = template(data);
 $tpl.before(html);
+</script>
+<div id="contact_me" class="contact">
+	<ul>
+		<li>杨再坤</li>
+		<li>职业保险人</li>
+		<li>电话：<a href="tel:12341234">12341234</a></li>
+		<li>公司：平安保险</li>
+		<li><img src="__PUBLIC__/image/header.jpg"></li>
+		<li><button class="am-btn am-btn-primary am-round" id="close_contact">关闭</button></li>
+	</ul>
+</div>
+<script>
+	$(".contact_me").on('click', function(){
+		$("#contact_me").show();
+	})
+	$("#close_contact").on('click', function(){
+		$('#contact_me').hide();
+	})
 </script>

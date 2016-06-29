@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+.contact {
+	width:100%;
+	height:auto;
+	z-index: 1000;
+	background-image: url(images.png);
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+}
+.contact ul{
+	padding-top: 2em;
+	list-style-type: none;
+	padding-left: 0;
+}
+.contact ul li{
+	text-align: center;
+}
+.contact ul li img{
+	width:100%;
+	height:100%;
+	border-radius: 12em;
+}
+.contact ul li button{
+	margin-top: 1em;
+}
