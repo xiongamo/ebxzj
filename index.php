@@ -1,5 +1,5 @@
 <?php
-
+phpinfo();exit;
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -20,7 +20,7 @@ define('APP_DEBUG',true);
 // 定义应用目录
 define('APP_PATH','./Application/');
 if(APP_DEBUG){
-	define('__ROOT__', 'http://www.dev.ebxzj.com');
+	define('__ROOT__', 'http://www.dev.local.com');
 }else{
 	define('__ROOT__', 'http://jinpaibaoxian.com');
 }
