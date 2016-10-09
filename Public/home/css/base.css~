@@ -48,7 +48,7 @@
 ================================================== */
 	.columns img,
 	.column img {
-		height: 47px;
+		height: auto;
 		max-width: 100%;
 	}
 	

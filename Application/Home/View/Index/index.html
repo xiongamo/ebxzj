@@ -56,7 +56,7 @@
 		<!-- Logo -->
 		<div class="eight columns">
 			<div id="logo">
-				<a href="#"><img src="__PUBLIC__/image/logo.png" alt="logo" /></a>
+				<a href="#"><img src="__PUBLIC__/image/logo.PNG" alt="logo" /></a>
 				<div id="tagline">保险之家</div>
 				<div class="clear"></div>
 			</div>
@@ -135,26 +135,15 @@
 		<section class="slider">
 			<div class="flexslider home">
 				<ul class="slides">
-				
+					<foreach name="lc_list" item="value">
 					<li>
-						<img src="images/slider-img-01.jpg" alt="" />
+						<img src="{$value.img}" alt="" />
 						<div class="slide-caption">
-							<h3>最新保险知识</h3>
-							<p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+							<h3>{$value.title}</h3>
 						</div>
 					</li>
+					</foreach>
 					
-					<li>
-						<img src="images/slider-img-02.jpg" alt="" />
-						<div class="slide-caption">
-							<h3>最新保险知识</h3>
-							<p>哈哈哈哈哈哈哈哈哈</p>
-						</div>
-					</li>
-					
-					<li>
-						<img src="images/slider-img-03.jpg" alt="" />
-					</li>
 					
 				</ul>
 			</div>
